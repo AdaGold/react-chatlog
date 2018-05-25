@@ -10,13 +10,27 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Application title</h1>
+          <h1 className="App-title">{this.appTitle()}</h1>
         </header>
         <main className="App-main">
           <ChatLog entries={chatMessages} />
         </main>
       </div>
     );
+  }
+
+  appTitle() {
+    const [first, second] = this.participants();
+
+    return `Chat between ${first} and ${second}`;
+  }
+
+  // Return an array of each participant in the chat
+  participants() {
+    const senders = chatMessages.map(msg => msg.sender);
+    const uniqueSenders = new Set(senders);
+
+    return [...uniqueSenders];
   }
 }
 
