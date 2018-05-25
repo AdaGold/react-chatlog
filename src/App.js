@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ChatLog from './components/ChatLog';
 import './App.css';
 import chatMessages from './data/messages.json';
 
@@ -12,6 +13,7 @@ class App extends Component {
           <h1 className="App-title">Application title</h1>
         </header>
         <main className="App-main">
+          <ChatLog entries={chatMessages} />
         </main>
       </div>
     );
