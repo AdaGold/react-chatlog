@@ -26,6 +26,9 @@ Finally, after analyzing the provided data and designing a set of components and
 
 At the end we will discuss the design choices as a whole class.
 
+## Setup
+After forking and cloning this repo you must run `npm install` in the project directory. This will download and install all of the necessary NPM modules required by the project. After that finishes successfully you can run `npm start` to begin the local development server.
+
 ## Wave 1
 For wave 1 implement the component(s) necessary to display a single chat message bubble with the message text and relative timestamp, plus the sender's name above it.
 
