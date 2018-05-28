@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-class TimeStamp extends React.Component {
+class Timestamp extends React.Component {
   render() {
     const time = moment(this.props.time);
     const absolute = time.format('MMMM Do YYYY, h:mm:ss a');
@@ -11,4 +11,4 @@ class TimeStamp extends React.Component {
   }
 }
 
-export default TimeStamp;
+export default Timestamp;
