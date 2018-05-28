@@ -142,6 +142,6 @@
 /*******************/
 
 .chat-log {
-  width: 50rem;
+  max-width: 50rem;
   margin: auto;
 }
