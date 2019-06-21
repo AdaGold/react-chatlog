@@ -1,6 +1,8 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
 
+import './ChatLog.css';
+
 class ChatLog extends React.Component {
   render() {
     const entries = this.props.entries.map((entry, i) => {

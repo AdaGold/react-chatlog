@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ChatLog from './components/ChatLog';
 import './App.css';
 import chatMessages from './data/messages.json';
 
-class App extends Component {
-  render() {
-    console.log(chatMessages);
+// Return an array of each participant in the chat
+const participants = () => {
+  const senders = chatMessages.map(msg => msg.sender);
+  const uniqueSenders = new Set(senders);
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">{this.appTitle()}</h1>
-        </header>
-        <main className="App-main">
-          <ChatLog entries={chatMessages} />
-        </main>
-      </div>
-    );
-  }
+  return [...uniqueSenders];
+}
 
-  appTitle() {
-    const [first, second] = this.participants();
+const appTitle = () => {
+  const [first, second] = participants();
 
-    return `Chat between ${first} and ${second}`;
-  }
+  return `Chat between ${first} and ${second}`;
+}
 
-  // Return an array of each participant in the chat
-  participants() {
-    const senders = chatMessages.map(msg => msg.sender);
-    const uniqueSenders = new Set(senders);
+const App = () => {
+  console.log(chatMessages);
 
-    return [...uniqueSenders];
-  }
+  return (
+    <div id="App">
+      <header>
+        <h1>{appTitle()}</h1>
+      </header>
+      <main>
+        <ChatLog entries={chatMessages} />
+      </main>
+    </div>
+  );
 }
 
 export default App;
