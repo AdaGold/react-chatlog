@@ -25,10 +25,6 @@
   margin-bottom: 0.5rem;
 }
 
-.chat-entry .entry-body {
-  line-height: 1.5em;
-}
-
 .chat-entry .entry-time {
   color: #bbb;
   font-size: x-small;
@@ -37,13 +33,14 @@
 }
 
 /* Chat bubble arrow styling */
-.chat-entry .entry-bubble:before{
-  border: 22px solid transparent;
-  content: ' ';
-  height: 0;
+.chat-entry .entry-bubble::before {
+  content: '';
+  height: 22px;
+  width: 44px;
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+
   position: absolute;
   top: 0;
-  width: 0;
 }
 
 /* "local" messages are shown on the left side */
@@ -55,13 +52,13 @@
   text-align: right;
 }
 
-.chat-entry.local .entry-bubble:before {
-  border-color: #ffffe0 transparent transparent transparent;
+.chat-entry.local .entry-bubble::before {
+  background-color: #ffffe0;
   left: -18px;
 }
 
-.chat-entry.local .entry-bubble:hover:before {
-  border-color: #fefea2 transparent transparent transparent;
+.chat-entry.local .entry-bubble:hover::before {
+  background-color: #fefea2;
 }
 
 /* "remote" messages are shown on the right side, in blue */
@@ -83,11 +80,11 @@
   text-align: left;
 }
 
-.chat-entry.remote .entry-bubble:before {
-  border-color: #e0ffff transparent transparent transparent;
+.chat-entry.remote .entry-bubble::before {
+  background-color: #e0ffff;
   right: -18px;
 }
 
-.chat-entry.remote .entry-bubble:hover:before {
-  border-color: #a9f6f6 transparent transparent transparent;
+.chat-entry.remote .entry-bubble:hover::before {
+  background-color: #a9f6f6;
 }
