@@ -3,9 +3,11 @@ import './ChatEntry.css';
 import TimeStamp from './Timestamp'
 
 const ChatEntry= (props) => {
+
+    const localRemote = props.odd === 0 ? "chat-entry local" : "chat-entry remote"
+
     return(
-        
-        <div className="chat-entry">
+        <div className={localRemote}>
             <h1 className="entry-name">{props.sender}</h1>
             <div className="entry-bubble">
                 <p>{props.body}</p>

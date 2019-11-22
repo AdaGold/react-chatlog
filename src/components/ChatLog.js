@@ -7,7 +7,7 @@ const ChatLog= (props) => {
     const entryComponents = entries.map((entry, i) => {
       return (
         <div className="chat-log" key={i}>
-          <ChatEntry sender={ entry.sender } body={ entry.body } timeStamp={entry.timeStamp}/>
+          <ChatEntry sender={ entry.sender } body={ entry.body } timeStamp={entry.timeStamp} odd={i%2}/>
         </div>
       );
     });
