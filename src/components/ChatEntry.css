@@ -22,6 +22,7 @@
 
 .chat-entry .entry-name {
   font-size: medium;
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 

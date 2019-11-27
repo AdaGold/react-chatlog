@@ -8,7 +8,7 @@ const ChatEntry= (props) => {
 
     return(
         <div className={localRemote}>
-            <h1 className="entry-name">{props.sender}</h1>
+            <span className="entry-name">{props.sender}</span>
             <div className="entry-bubble">
                 <p>{props.body}</p>
                 <p className = 
