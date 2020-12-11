@@ -36,7 +36,7 @@ A good way to test this code as you write it would be to take the first chat mes
 
 ### Tests
 
-This component has a set of tests that ensure that props passed to the component appear in the browser.  To pass the tests you should name this component **ChatEntry** and give it props which match, (including the name of the props) the elements from each chat message in the JSON data file.  Otherwise the tests will not pass.  Otherwise just adjust the tests to use the proper props.
+This component has a set of tests that ensure that props passed to the component appear in the browser.  To pass the tests you should name this component **ChatEntry** and give it props which match, (including the name of the props) the elements from each chat message in the JSON data file.  Otherwise the tests will not pass.  Alternatively you can adjust the tests to use the proper props.
 
 ### Styling
 The styles necessary to make an app which visually matches the demo above have been provided for you, but you will need to make use of them in your React components by adding classes to specific HTML elements in your JSX.
