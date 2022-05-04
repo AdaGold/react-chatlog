@@ -9,6 +9,7 @@
   position: fixed;
   width: 100%;
   z-index: 100;
+  text-align: center;
 }
 
 #App main {
@@ -19,4 +20,32 @@
 #App h1 {
   font-size: 1.5em;
   text-align: center;
+}
+
+#App span {
+  display: inline-block
+}
+
+.red {
+  color: red
+}
+
+.orange {
+  color: orange
+}
+
+.yellow {
+  color: yellow
+}
+
+.green {
+  color: green
+}
+
+.blue {
+  color: blue
+}
+
+.purple {
+  color: purple
 }
