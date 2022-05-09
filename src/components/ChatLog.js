@@ -12,8 +12,8 @@ const ChatLog = (props) => {
           body={entry.body}
           timeStamp={entry.timeStamp}
           odd={i % 2}
+          color0={props.color0}
           color1={props.color1}
-          color2={props.color2}
           id={entry.id}
           heart={entry.heart}
           updateHeartCallback={props.updateHeartCallback}

@@ -8,8 +8,7 @@ const ChatEntry = (props) => {
   const localRemote =
     props.odd === 0 ? "chat-entry local" : "chat-entry remote";
 
-  const color = props.odd === 0 ? props.color1 : props.color2;
-  const heartColor = like ? "red" : "white";
+  const color = props.odd === 0 ? props.color0 : props.color1;
 
   const toggleLike = (id) => {
     console.log(id);
