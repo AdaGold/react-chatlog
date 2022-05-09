@@ -9,6 +9,7 @@ const ChatEntry = (props) => {
     props.odd === 0 ? "chat-entry local" : "chat-entry remote";
 
   const color = props.odd === 0 ? props.color1 : props.color2;
+  const heartColor = like ? "red" : "white";
 
   const toggleLike = (id) => {
     console.log(id);
@@ -24,8 +25,17 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
+        {/* <button id="heart" className={heartColor}></button> */}
         <button onClick={() => toggleLike(props.id)}>
-          {like ? <span>❤️</span> : <span>🤍</span>}
+          {like ? (
+            <span role="im" aria-label="filled red heart">
+              ❤️
+            </span>
+          ) : (
+            <span role="img" aria-label="empty white heart">
+              🤍
+            </span>
+          )}
         </button>
       </div>
     </div>

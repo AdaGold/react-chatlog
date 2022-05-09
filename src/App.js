@@ -7,8 +7,8 @@ import ColorChoice from "./components/ColorChoice";
 const App = () => {
   //console.log(chatMessages);
 
+  const [color0, setColor0] = useState("black");
   const [color1, setColor1] = useState("black");
-  const [color2, setColor2] = useState("black");
   const [entries, setEntries] = useState(chatMessages);
 
   const calculateHearts = () => {
@@ -32,51 +32,52 @@ const App = () => {
     setEntries(entriesCopy);
   };
 
-  const setSenderColor1 = (newColor) => {
+  const setSenderColor0 = (newColor) => {
     console.log("set sender color 1");
-    setColor1(newColor);
+    setColor0(newColor);
   };
 
-  const setSenderColor2 = (newColor) => {
-    console.log("set sender color 2");
-    setColor2(newColor);
+  const setSenderColor1 = (newColor) => {
+    setColor1(newColor);
   };
   return (
     <div id="App">
       <header>
         <h1>
-          <span>
-            <ColorChoice setColorCallback={setSenderColor1} />
-          </span>
-          <span>
-            Chat between{" "}
-            <span id="sender1" className={color1}>
-              {chatMessages[0].sender}
-            </span>{" "}
-            and{" "}
-            <span id="sender2" className={color2}>
-              {chatMessages[1].sender}
-            </span>
-          </span>
-          <span>
-            <ColorChoice setColorCallback={setSenderColor2} />
+          Chat between{" "}
+          <span id="sender1" className={color0}>
+            {chatMessages[0].sender}
+          </span>{" "}
+          and{" "}
+          <span id="sender2" className={color1}>
+            {chatMessages[1].sender}
           </span>
         </h1>
-
-        <h2>
-          {calculateHearts()}{" "}
-          <span role="img" aria-label="filled red heart">
-            ❤️
-          </span>
-          s
-        </h2>
+        <section>
+          <ColorChoice
+            setColorCallback={setSenderColor0}
+            name={chatMessages[1].sender}
+            color={color0}
+          />
+          <h2 id="heartWidget" className="widget">
+            <span> {calculateHearts()} </span>
+            <span role="img" aria-label="filled red heart">
+              ❤️s
+            </span>
+          </h2>
+          <ColorChoice
+            setColorCallback={setSenderColor1}
+            name={chatMessages[1].sender}
+            color={color1}
+          />
+        </section>
       </header>
 
       <main>
         <ChatLog
           entries={entries}
+          color0={color0}
           color1={color1}
-          color2={color2}
           updateHeartCallback={updateHeart}
         />
       </main>
