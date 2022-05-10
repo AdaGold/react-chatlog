@@ -1,13 +1,12 @@
-import React from 'react';
-import moment from 'moment';
+import React from "react";
+import moment from "moment";
 
-const Timestamp = (props) => {
+const TimeStamp = (props) => {
   const time = moment(props.time);
-  const absolute = time.format('MMMM Do YYYY, h:mm:ss a');
+  const absolute = time.format("MMMM Do YYYY, h:mm:ss a");
   const relative = time.fromNow();
 
   return <span title={absolute}>{relative}</span>;
 };
 
-
-export default Timestamp;
+export default TimeStamp;
