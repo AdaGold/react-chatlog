@@ -1,4 +1,4 @@
-# Wave 2
+# Wave 02: Container Component
 
 Implement a `ChatLog` component and update the `App` component to display an entire chat log. `ChatLog` should display a sequence of individual `ChatEntry` components.
 

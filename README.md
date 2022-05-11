@@ -16,11 +16,10 @@ This project comes with a minimal scaffold based on the baseline React applicati
 ![React Chat Log demo](./images/react-chatlog-demo.gif)
 
 ## Project Directions
-- [Planning and Setup](./project-docs/setup.md)
-- [Wave 01](./project-docs/wave-01.md)
-- [Wave 02](./project-docs/wave-02.md)
-- [Wave 03](./project-docs/wave-03.md)
-- [Wave 04](./project-docs/wave-04.md)
+- [Planning, Setup, and Tests](./project-docs/setup.md)
+- [Wave 01: Presentational Component](./project-docs/wave-01.md)
+- [Wave 02: Container Component](./project-docs/wave-02.md)
+- [Wave 03: Event Handling and Lifting Up State](./project-docs/wave-03.md)
 - [Optional Enhancements](./project-docs/optional-enhancements.md)
 
 

@@ -1,4 +1,4 @@
-# Wave 01
+# Wave 01: Presentational Component
 
 Update the `ChatEntry` and `App` components to display a single chat message bubble with the message text and relative timestamp, plus the sender's name above it.  
 
