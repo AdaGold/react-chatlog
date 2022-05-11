@@ -12,11 +12,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>Replace with body of ChatEntry</p>
         <p className="entry-time">Replace with TimeStamp component</p>
-        <button>
-          <span role="im" aria-label="filled red and empty heart">
-            ❤️🤍
-          </span>
-        </button>
+        <button className="empty-heart"></button>
       </section>
     </div>
   );
