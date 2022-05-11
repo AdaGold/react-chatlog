@@ -8,6 +8,14 @@ button {
 	outline: inherit;
 }
 
+.filled-heart::before {
+  content: "❤️"
+}
+
+.empty-heart::before {
+  content: "🤍"
+}
+
 .chat-entry {
   margin: 1rem;
 }
@@ -97,12 +105,4 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
-}
-
-.filled-heart::before {
-  content: "❤️"
-}
-
-.empty-heart::before {
-  content: "🤍"
 }
