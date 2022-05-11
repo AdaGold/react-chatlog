@@ -1,4 +1,5 @@
 ## Baseline
+
 Examine the JSON file located at `src/data/messages.json` to familiarize yourself with the data you will be using.
 
 What properties comprise an individual chat message? What are their data types? How are the chat messages organized? Are they sorted in a particular way?
@@ -14,4 +15,7 @@ Finally, after analyzing the provided data and designing a set of components and
 At the end we will discuss the design choices as a whole class.
 
 ## Setup
+
 After forking and cloning this repo you must run `npm install` in the project directory. This will download and install all of the necessary NPM modules required by the project. After that finishes successfully you can run `npm start` to begin the local development server.
+
+## Tests

@@ -1,24 +1,13 @@
-# Wave 1
+# Wave 01
 
 Update the `ChatEntry` and `App` components to display a single chat message bubble with the message text and relative timestamp, plus the sender's name above it.  
 
 A good way to test this code as you write it would be to take the first chat message from the JSON data file and use it as the data for the `ChatEntry` component.
 
-## props
-
-The following table describes the `props` for a `ChatEntry` component.
-
-| prop | value |
-|--|--|
-| `source` | The following rule applies for passing data to the `source` prop: <br> pass `"local"` if the `sender` is `"Estragon"` and `"remote"` if the `sender` is `"Vladimir"`.|
-|`body`, `sender`, `timeStamp`| The values for the corresponding keys in the chat entry dictionary in `message.json` should be passed to the `body`, `sender`, and `timeStamp` props.|
-
-
-## Tests
-
-This component has a set of tests that ensure that props passed to the component appear in the browser.  To pass the tests you should name this component **ChatEntry** and give it props which match, (including the type and name of the props) the elements from each chat message in the JSON data file.  Otherwise the tests will not pass.  Alternatively, you can follow your curiosity to learn more about React testing and adjust the tests to use the different prop names you defined.
+`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`.
 
 ## Styling
+
 The styles necessary to make an app which visually matches the demo above have been provided for you, but you will need to make use of them in your React components by adding classes to specific HTML elements in your JSX.
 
 There are several CSS classes for the different elements of a chat message. You should attempt to determine which classes should be applied to which HTML elements, however if you are stuck on this please ask a member of the instructional staff as the styling on this project is not the learning goal.
