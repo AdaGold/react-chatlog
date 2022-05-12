@@ -8,14 +8,6 @@ button {
 	outline: inherit;
 }
 
-.filled-heart::before {
-  content: "❤️"
-}
-
-.empty-heart::before {
-  content: "🤍"
-}
-
 .chat-entry {
   margin: 1rem;
 }

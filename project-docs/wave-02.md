@@ -2,9 +2,9 @@
 
 Implement a `ChatLog` component and update the `App` component to display an entire chat log. `ChatLog` should display a sequence of individual `ChatEntry` components.
 
-`ChatLog` takes one prop named `chatMessages` (which is an array).
+`ChatLog` takes one prop named `entries` (which is an array).
 
-At this point, we can use the entire chat message data from the JSON file to test our code as you implement each component.
+At this point, we can use the entire chat message data from the JSON file `entries.json` to test our code as you implement each component.
 
 ## Styling
 

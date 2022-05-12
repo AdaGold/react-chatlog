@@ -12,10 +12,9 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>Replace with body of ChatEntry</p>
         <p className="entry-time">Replace with TimeStamp component</p>
-        <button
-          onClick={props.onClickCallback}
-          className="empty-heart"
-        ></button>
+        <button onClick={props.onClickCallback} className="like">
+          🤍❤️
+        </button>
       </section>
     </div>
   );
