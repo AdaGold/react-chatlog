@@ -1,6 +1,6 @@
-import React from "react";
-import "./ChatEntry.css";
-import PropTypes from "prop-types";
+import React from 'react';
+import './ChatEntry.css';
+import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
   return (
