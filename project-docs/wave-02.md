@@ -4,7 +4,7 @@ Implement a `ChatLog` component and update the `App` component to display an ent
 
 `ChatLog` takes one prop named `entries` (which is an array).
 
-At this point, we can use the entire chat message data from the JSON file `entries.json` to test our code as you implement each component.
+At this point, we can use the entire chat message data from the JSON file `messages.json` to test our code as you implement each component. We may chose to update the `ChatEntry` to use the `id` field in this wave.
 
 ## Styling
 

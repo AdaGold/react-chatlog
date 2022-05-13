@@ -4,7 +4,7 @@ Update the `ChatEntry` and `App` components to display a single chat message bub
 
 A good way to test this code as you write it would be to take the first chat message from the JSON data file and use it as the data for the `ChatEntry` component.
 
-`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`.
+`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`. Note: We do not need to include the `id` and `liked` fields for Wave 01.
 
 ## Styling
 
@@ -12,7 +12,7 @@ The styles necessary to make an app which visually matches the demo above have b
 
 There are several CSS classes for the different elements of a chat message. You should attempt to determine which classes should be applied to which HTML elements, however if you are stuck on this please ask a member of the instructional staff as the styling on this project is not the learning goal.
 
-Usually our convention for styles in React applications is to have a separate CSS file for every component (refer to the scaffold for React Timeline as an example). 
+Usually our convention for styles in React applications is to have a separate CSS file for every component. 
 
 **NOTE**: Unless you are working on the optional enhancement, make sure that your chat message's container element has both the classes "chat-entry" and "local".
 
