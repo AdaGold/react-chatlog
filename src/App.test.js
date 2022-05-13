@@ -1,48 +1,53 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import App from './App'
 import { render, screen, fireEvent } from '@testing-library/react'
 
-describe('App', () => {
-  const clickButtonAndVerifyResult = (
-    container,
-    buttonIndex,
-    expectedResult
-  ) => {
+describe('Wave 03: clicking like button and rendering App', () => {
+  test('that the correct number of likes is printed at the top', () => {
+    // Arrange
+    const { container } = render(<App />)
     let buttons = container.querySelectorAll('button.like')
-    console.log('buttons: ', buttons)
-    fireEvent.click(buttons[buttonIndex])
 
-    buttons = container.querySelectorAll('button.like')
+    // Act
+    fireEvent.click(buttons[0])
+    fireEvent.click(buttons[1])
+    fireEvent.click(buttons[10])
 
-    expect(buttons[buttonIndex].innerHTML).toEqual(expectedResult)
-  }
-  test('renders without crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(<App />, div)
-    ReactDOM.unmountComponentAtNode(div)
+    // Assert
+    const countScreen = screen.getByText(/3 ❤️s/)
+    expect(countScreen).not.toBeNull()
   })
 
-  describe('Wave 03: clicking like button and rendering App', () => {
-    test('that the correct number of likes is printed at the top', () => {
-      // Arrange
-      const { container } = render(<App />)
+  test('clicking button toggles heart and does not affect other buttons', () => {
+    // Arrange
+    const { container } = render(<App />)
+    const buttons = container.querySelectorAll('button.like')
+    const firstButton = buttons[0]
+    const lastButton = buttons[buttons.length - 1]
 
-      // Act
-      clickButtonAndVerifyResult(container, 0, '❤️')
-      clickButtonAndVerifyResult(container, 1, '❤️')
+    // Act-Assert
 
-      // Assert
-      const countScreen = screen.getByText(/2 ❤️s/)
-      expect(countScreen).not.toBeNull()
-    })
+    // click the first button
+    fireEvent.click(firstButton)
+    expect(firstButton.innerHTML).toEqual('❤️')
 
-    test('clicking empty button changes to filled the back to empty', () => {
-      const { container } = render(<App />)
+    // check that all other buttons haven't changed
+    for (let i = 1; i < buttons.length; i++) {
+      expect(buttons[i].innerHTML).toEqual('🤍')
+    }
 
-      // Act-assert
-      clickButtonAndVerifyResult(container, 0, '❤️')
-      clickButtonAndVerifyResult(container, 0, '🤍')
-    })
+    // click the first button a few more times
+    fireEvent.click(firstButton)
+    expect(firstButton.innerHTML).toEqual('🤍')
+    fireEvent.click(firstButton)
+    expect(firstButton.innerHTML).toEqual('❤️')
+    fireEvent.click(firstButton)
+    expect(firstButton.innerHTML).toEqual('🤍')
+
+    // click the last button a couple times
+    fireEvent.click(lastButton)
+    expect(lastButton.innerHTML).toEqual('❤️')
+    fireEvent.click(lastButton)
+    expect(lastButton.innerHTML).toEqual('🤍')
   })
 })
