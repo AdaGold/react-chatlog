@@ -9,14 +9,66 @@
   position: fixed;
   width: 100%;
   z-index: 100;
+  text-align: center;
+  align-items: center;
 }
 
 #App main {
+  padding-left: 2em;
+  padding-right: 2em;
   padding-bottom: 5rem;
-  padding-top: 7rem;
+  padding-top: 10rem;
 }
 
 #App h1 {
   font-size: 1.5em;
   text-align: center;
+  display: inline-block;
+}
+
+#App header section {
+  background-color: #e0ffff;
+}
+
+#App .widget {
+  display: inline-block;
+  line-height: 0.5em;
+  border-radius: 10px;
+  color: black;
+  font-size:0.8em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#App #heartWidget {
+  font-size: 1.5em;
+  margin: 1em
+}
+
+#App span {
+  display: inline-block
+}
+
+.red {
+  color: #b22222
+}
+
+.orange {
+  color: #e6ac00
+}
+
+.yellow {
+  color: #e6e600
+}
+
+.green {
+  color: green
+}
+
+.blue {
+  color: blue
+}
+
+.purple {
+  color: purple
 }
