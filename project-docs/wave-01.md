@@ -18,4 +18,4 @@ Usually our convention for styles in React applications is to have a separate CS
 
 ## Tests
 
-This component has a set of tests that ensure that props passed to the component appear in the browser. To pass the tests you should name this component `ChatEntry` and give it props `sender`, `body`,  and `timeStamp`.
+This component has a set of tests that ensure that props passed to the component appear in the browser. To pass the tests, the component must be named `ChatEntry` with props `sender`, `body`,  and `timeStamp`.
