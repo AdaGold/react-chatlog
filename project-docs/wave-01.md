@@ -15,3 +15,7 @@ There are several CSS classes for the different elements of a chat message. You 
 Usually our convention for styles in React applications is to have a separate CSS file for every component (refer to the scaffold for React Timeline as an example). 
 
 **NOTE**: Unless you are working on the optional enhancement, make sure that your chat message's container element has both the classes "chat-entry" and "local".
+
+## Tests
+
+This component has a set of tests that ensure that props passed to the component appear in the browser. To pass the tests you should name this component `ChatEntry` and give it props `sender`, `body`,  and `timeStamp`.

@@ -18,4 +18,3 @@ At the end we will discuss the design choices as a whole class.
 
 After forking and cloning this repo you must run `npm install` in the project directory. This will download and install all of the necessary NPM modules required by the project. After that finishes successfully you can run `npm start` to begin the local development server.
 
-## Tests

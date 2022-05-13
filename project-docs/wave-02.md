@@ -9,3 +9,7 @@ At this point, we can use the entire chat message data from the JSON file `entri
 ## Styling
 
 Note the rule set in `ChatLog.css` and consider how to apply it to the `ChatLog` component. Remember, applying the provided styles is not one of the main learning goals for this project.
+
+## Tests
+
+The tests for this component assume that the component is named `ChatLog` and takes one prop named `entries` (which is an array).
