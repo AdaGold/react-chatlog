@@ -10,11 +10,12 @@ Next, link the data to the components. Take a look at the JSON file again. Each 
 
 Once you've identified which data will be used by which components, consider the structure of the data. Which pieces of data are grouped together into data structures? This is often a sign that those pieces of data will be used by the same component. Are there any nested data structures? This is usually a sign that components should be nested as well, with the more deeply nested components using the more deeply nested data.
 
-Finally, after analyzing the provided data and designing a set of components and their relationships to the data, you should write down your proposed design and discuss it with your chair pair. Is their design different from yours? If so, discuss the reasoning for each of yours designs and determine any possible pros/cons for both approaches.
+Finally, after analyzing the provided data and designing a set of components and their relationships to the data, you should write down your proposed design
 
-At the end we will discuss the design choices as a whole class.
+
+Consider discussing your design with a classmate. Is their design different from yours? If so, discuss the reasoning for each of yours designs and determine any possible pros/cons for both approaches.
 
 ## Setup
 
-After forking and cloning this repo you must run `npm install` in the project directory. This will download and install all of the necessary NPM modules required by the project. After that finishes successfully you can run `npm start` to begin the local development server.
+After forking and cloning this repo you must run `npm install` in the project directory. This will download and install all of the necessary NPM modules required by the project. After that finishes successfully, run `npm start` to begin the local development server.
 
