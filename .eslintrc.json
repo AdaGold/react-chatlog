@@ -23,6 +23,6 @@
       "single",
       { "allowTemplateLiterals": true, "avoidEscape": true }
     ],
-    "camelCase": "error"
+    "camelcase": "error"
   }
 }
