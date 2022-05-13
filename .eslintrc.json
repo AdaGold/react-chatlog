@@ -6,14 +6,14 @@
     "node": true,
     "jest/globals": true
   },
-  "extends": ["react-app", "plugin:jest/recommended", "prettier"],
+  "extends": ["react-app", "plugin:jest/recommended"],
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["jest", "jsx-a11y", "prettier"],
+  "plugins": ["jest", "jsx-a11y"],
   "rules": {
-    "prettier/prettier": "error",
+    // "prettier/prettier": "error",
     "no-unused-vars": "warn",
     "no-var": "warn",
     "no-console": "off",
@@ -24,6 +24,6 @@
       "single",
       { "allowTemplateLiterals": true, "avoidEscape": true }
     ],
-    "camelCase": "error"
+    "camelcase": "error"
   }
 }
