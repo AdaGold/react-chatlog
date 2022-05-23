@@ -21,7 +21,7 @@ const App = () => {
       <header>
         <h1>Application title</h1>
         <section>
-          <p>{likes} ❤️'s</p>
+          <p>{likes} ❤️s</p>
         </section>
       </header>
       <main>

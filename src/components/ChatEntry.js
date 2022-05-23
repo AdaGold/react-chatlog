@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-import Timestamp from './Timestamp';
+import TimeStamp from './TimeStamp';
 
 const ChatEntry = ({ sender, body, timeStamp, updateLikes }) => {
   let senderClass = 'chat-entry local';
@@ -17,9 +17,11 @@ const ChatEntry = ({ sender, body, timeStamp, updateLikes }) => {
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time">
-          <Timestamp time={timeStamp} />
+          <TimeStamp time={timeStamp} />
         </p>
-        <p onClick={() => updateLikes(like, setLike)}>{like ? '❤️' : '🤍'}</p>
+        <button className="like" onClick={() => updateLikes(like, setLike)}>
+          {like ? '❤️' : '🤍'}
+        </button>
       </section>
     </div>
   );
