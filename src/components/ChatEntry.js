@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./ChatEntry.css";
-import PropTypes from "prop-types";
-import Timestamp from "./Timestamp";
+import React, { useState } from 'react';
+import './ChatEntry.css';
+import PropTypes from 'prop-types';
+import Timestamp from './Timestamp';
 
 const ChatEntry = ({ sender, body, timeStamp, updateLikes }) => {
-  let senderClass = "chat-entry local";
-  if (sender === "Estragon") {
-    senderClass = "chat-entry remote";
+  let senderClass = 'chat-entry local';
+  if (sender === 'Estragon') {
+    senderClass = 'chat-entry remote';
   }
 
   const [like, setLike] = useState(false);
@@ -19,7 +19,7 @@ const ChatEntry = ({ sender, body, timeStamp, updateLikes }) => {
         <p className="entry-time">
           <Timestamp time={timeStamp} />
         </p>
-        <p onClick={() => updateLikes(like, setLike)}>{like ? "❤️" : "🤍"}</p>
+        <p onClick={() => updateLikes(like, setLike)}>{like ? '❤️' : '🤍'}</p>
       </section>
     </div>
   );

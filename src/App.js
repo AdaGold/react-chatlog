@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "./App.css";
-import chatMessages from "./data/messages.json";
-import ChatLog from "./components/ChatLog";
+import React, { useState } from 'react';
+import './App.css';
+import chatMessages from './data/messages.json';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
   console.log(chatMessages);
