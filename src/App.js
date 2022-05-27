@@ -30,7 +30,6 @@ const App = () => {
   };
 
   const setSenderColor0 = (newColor) => {
-    console.log('set sender color 1');
     setColor0(newColor);
   };
 
@@ -53,7 +52,7 @@ const App = () => {
         <section>
           <ColorChoice
             setColorCallback={setSenderColor0}
-            name={chatMessages[1].sender}
+            name={chatMessages[0].sender}
             color={color0}
           />
           <h2 id="heartWidget" className="widget">
