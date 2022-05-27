@@ -15,5 +15,5 @@ ADD $SUBMISSION_SUBFOLDER /app
 # for Testing
 # ADD . .
 
-RUN npm install
+RUN yarn install
 RUN chmod +x test.sh

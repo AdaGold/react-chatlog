@@ -23,5 +23,5 @@ Consider discussing your design with a classmate. Is their design different from
 
 ## Setup
 
-After forking and cloning this repo you must run `npm install` in the project directory. This will download and install all of the necessary NPM modules required by the project. After that finishes successfully, run `npm start` to begin the local development server.
+After forking and cloning this repo you must run `yarn install` in the project directory. This will download and install all of the necessary node modules required by the project. After that finishes successfully, run `yarn start` to begin the local development server.
 
