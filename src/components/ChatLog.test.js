@@ -33,7 +33,7 @@ const LOG = [
 
 describe("Wave 02: ChatLog", () => {
   beforeEach(() => {
-    render(<ChatLog chatMessages={LOG} />);
+    render(<ChatLog entries={LOG} />);
   });
 
   test("renders without crashing and shows all the names", () => {
@@ -57,7 +57,7 @@ describe("Wave 02: ChatLog", () => {
   });
 
   test("renders an empty list without crashing", () => {
-    const element = render(<ChatLog chatMessages={[]} />);
+    const element = render(<ChatLog entries={[]} />);
     expect(element).not.toBeNull();
   });
 });
