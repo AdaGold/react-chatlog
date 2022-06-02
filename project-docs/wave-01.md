@@ -10,7 +10,7 @@ A good way to test this code as you write it would be to take the first chat mes
 
 The styles necessary to make an app which visually matches the demo above have been provided for you, but you will need to make use of them in your React components by adding classes to specific HTML elements in your JSX.
 
-There are several CSS classes for the different elements of a chat message. You should attempt to determine which classes should be applied to which HTML elements, however if you are stuck on this please ask a member of the instructional staff as the styling on this project is not the learning goal.
+There are several CSS classes for the different elements of a chat message. You should attempt to determine which classes should be applied to which HTML elements yourself. However, if you are stuck on this, please reach out for help as the styling is not the primary learning goal of this project.
 
 Usually our convention for styles in React applications is to have a separate CSS file for every component. 
 
@@ -18,4 +18,4 @@ Usually our convention for styles in React applications is to have a separate CS
 
 ## Tests
 
-This component has a set of tests that ensure that props passed to the component appear in the browser. To pass the tests you should name this component `ChatEntry` and give it props `sender`, `body`,  and `timeStamp`.
+This component has a set of tests that ensure that props passed to the component appear in the browser. To pass the tests, the component must be named `ChatEntry` with props `sender`, `body`,  and `timeStamp`.
