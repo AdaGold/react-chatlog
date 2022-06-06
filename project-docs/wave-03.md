@@ -1,5 +1,7 @@
 # Wave 03: Event Handling and Lifting Up State
 
+**Learn Topics: State and Event Handling & Lifting Up State required for this wave**
+
 In this wave we will update the components to manage a **like** feature. 
 
 - Add behavior to heart button in `ChatEntry` so that when it is clicked it toggles from an empty heart (🤍) to a filled heart (❤️) and from a filled heart (❤️) to an empty heart (🤍).
