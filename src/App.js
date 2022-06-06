@@ -30,6 +30,7 @@ const App = () => {
   };
 
   const setSenderColor0 = (newColor) => {
+    console.log('set new color');
     setColor0(newColor);
   };
 

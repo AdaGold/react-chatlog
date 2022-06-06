@@ -1,8 +1,8 @@
-import React from 'react'
-import ChatEntry from './ChatEntry'
+import React from 'react';
+import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
-  const entries = props.entries
+  const entries = props.entries;
 
   const entryComponents = entries.map((entry, i) => {
     return (
@@ -19,10 +19,10 @@ const ChatLog = (props) => {
           updateHeartCallback={props.updateHeartCallback}
         />
       </div>
-    )
-  })
+    );
+  });
 
-  return entryComponents
-}
+  return entryComponents;
+};
 
-export default ChatLog
+export default ChatLog;
