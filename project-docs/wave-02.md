@@ -1,5 +1,7 @@
 # Wave 02: Container Component
 
+**Learn Topics: React Components and Props required for this wave**
+
 Implement a `ChatLog` component and update the `App` component to display an entire chat log. `ChatLog` should display a sequence of individual `ChatEntry` components.
 
 `ChatLog` takes one prop named `entries` (which is an array).
