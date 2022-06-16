@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
-import ChatEntry from './components/ChatEntry';
-import { useState } from 'react/cjs/react.production.min';
 
 const App = () => {
+  //state
+  const [messageData, setMessageData] = useState(chatMessages);
+  let [totalLikes, setTotalLikes] = useState(0);
+
+  const updateMessageData = (updatedMessage) => {
+    const messages = messageData.map((message) => {
+      if (message.id === updatedMessage.id) {
+        return updatedMessage;
+      } else {
+        return message;
+      }
+    });
+    setMessageData(messages);
+    // console.log(messages);
+  };
+
+  const updateTotalLikes = (bool) => {
+    bool ? setTotalLikes((totalLikes += 1)) : setTotalLikes((totalLikes -= 1));
+  };
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Vlad and Estragon's Chat</h1>
+        <h2>{totalLikes > 0 && `${totalLikes} ❤️s`}</h2>
       </header>
       <main>
-        <ChatLog entries={chatMessages} />
-        {/* <ChatEntry sender="Vladimir" body="why are you arguing with me" /> */}
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+        <ChatLog
+          messages={messageData}
+          updateMessageData={updateMessageData}
+          totalLikes={totalLikes}
+          setTotalLikes={setTotalLikes}
+          updateTotalLikes={updateTotalLikes}
+        />
       </main>
     </div>
   );
