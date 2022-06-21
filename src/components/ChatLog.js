@@ -9,14 +9,15 @@ const ChatLog = (props) => {
   const chatComponents = props.entries.map((entry) => {
     // debugger;
     return (
-      <ul>
-        <ChatEntry
-          id={entry.id}
-          sender={entry.sender}
-          body={entry.body}
-          timeStamp={entry.timeStamp}
-        />
-      </ul>
+      <ChatEntry
+        key={entry.id}
+        id={entry.id}
+        sender={entry.sender}
+        body={entry.body}
+        timeStamp={entry.timeStamp}
+        onLikeMessage={props.onLikeMessage}
+        onUnlikeMessage={props.onUnlikeMessage}
+      />
     );
   });
   return <div className="chat-log">{chatComponents}</div>;
@@ -24,6 +25,8 @@ const ChatLog = (props) => {
 
 ChatLog.propTypes = {
   entries: PropTypes.arrayOf(PropTypes.object),
+  onLikeMessage: PropTypes.func.isRequired,
+  onUnlikeMessage: PropTypes.func.isRequired,
 };
 
 export default ChatLog;

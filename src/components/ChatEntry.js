@@ -5,9 +5,25 @@ import PropTypes from 'prop-types';
 const ChatEntry = (props) => {
   // const [likeCount, setLikeCount] = useState(0);
 
-  // const onLike = () => {
+  // const likeMessage = () => {
   //   setLikeCount(likeCount +1);
   // }
+
+  const [likeMessage, setLikeMessage] = useState(liked);
+  const likeButton = liked? '❤️' : '🤍';
+
+  // FUNCTION TO CALCULATE YEARS AGO !!
+  const handleLike = () => {
+    props.onLikeMessage(props.id);
+  };
+
+  const handleUnlikeMessage = () => {
+    props.onUnlikeMessage(props.id);
+  };
+
+  // const likeButton = () => {
+  //   return props.liked = true ? '❤️' : '🤍';
+  // };
 
   return (
     <div className="chat-entry local">
@@ -15,8 +31,10 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">{props.timeStamp} 4 years ago/</p>
-        {/* <p>likeCount: {onLike}</p> */}
-        <button className="like">🤍</button>
+        <button className="like" onClick={handleLike}>
+          {likeButton}
+        </button>
+        <button onClick={handleUnlikeMessage}>unlikeButton</button>
       </section>
     </div>
   );
@@ -28,6 +46,8 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool,
+  onLikeMessage: PropTypes.func.isRequired,
+  onUnlikeMessage: PropTypes.func.isRequired,
 
   //Fill with correct proptypes
 };
@@ -36,7 +56,7 @@ ChatEntry.propTypes = {
 // let body =
 //   'NO! YOU ARE A ROBOT!! I am a human being. Just like the one that created you.';
 // let timeStamp = '2018-05-29T23:00:08+00:00';
-
+//     ❤️
 // ChatEntry(sender, body, timeStamp);
 
 export default ChatEntry;
