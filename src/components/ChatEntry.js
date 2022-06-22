@@ -9,21 +9,24 @@ const ChatEntry = (props) => {
   //   setLikeCount(likeCount +1);
   // }
 
-  const [likeMessage, setLikeMessage] = useState(liked);
-  const likeButton = liked? '❤️' : '🤍';
+  // const [likeMessage, setLikeMessage] = useState(liked);
+  // const likeButton = liked? '❤️' : '🤍';
 
   // FUNCTION TO CALCULATE YEARS AGO !!
-  const handleLike = () => {
+  // const handleLike = () => {
+  //   props.onLikeMessage(props.id);
+  // };
+
+  // const handleUnlikeMessage = () => {
+  //   props.onUnlikeMessage(props.id);
+  // };
+
+  // const [liked, setLiked] = useState();
+  const handleLikeButton = () => {
     props.onLikeMessage(props.id);
   };
 
-  const handleUnlikeMessage = () => {
-    props.onUnlikeMessage(props.id);
-  };
-
-  // const likeButton = () => {
-  //   return props.liked = true ? '❤️' : '🤍';
-  // };
+  const heartButton = props.liked ? '❤️' : '🤍';
 
   return (
     <div className="chat-entry local">
@@ -31,10 +34,11 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">{props.timeStamp} 4 years ago/</p>
-        <button className="like" onClick={handleLike}>
-          {likeButton}
+        <button className="like" onClick={handleLikeButton}>
+          {heartButton}
         </button>
-        <button onClick={handleUnlikeMessage}>unlikeButton</button>
+
+        {/* <button onClick={handleUnlikeMessage}>unlikeButton</button> */}
       </section>
     </div>
   );
@@ -45,9 +49,9 @@ ChatEntry.propTypes = {
   sender: PropTypes.string,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
-  liked: PropTypes.bool,
+  liked: PropTypes.bool.isRequired,
   onLikeMessage: PropTypes.func.isRequired,
-  onUnlikeMessage: PropTypes.func.isRequired,
+  // onUnlikeMessage: PropTypes.func.isRequired,
 
   //Fill with correct proptypes
 };

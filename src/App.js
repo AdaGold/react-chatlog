@@ -13,7 +13,7 @@ const App = () => {
       // what we want to modify when we click !
       if (entry.id === id) {
         // entry.liked = true;
-        // console.log(entry);
+        console.log(entry);
         return { ...entry, liked: !entry.liked };
       } else {
         return entry;
@@ -22,14 +22,18 @@ const App = () => {
     setEntries(newEntry);
   };
 
-  const unlikeMessage = (id) => {
-    console.log(`unregister ${id}`);
-  };
+  // const unlikeMessage = (id) => {
+  //   console.log(`unregister ${id}`);
+  // };
+
+  // const [liked, setLiked] = useState(liked);
+  // const button = liked ? '❤️' : '🤍';
 
   const totalLikes = entries.reduce((total, entry) => {
     if (entry.liked === true) {
       total += 1;
-    }return total;
+    }
+    return total;
   }, 0);
 
   return (
@@ -42,7 +46,7 @@ const App = () => {
         <ChatLog
           entries={entries}
           onLikeMessage={likeMessage}
-          onUnlikeMessage={unlikeMessage}
+          // onUnlikeMessage={unlikeMessage}
         />
       </main>
     </div>
