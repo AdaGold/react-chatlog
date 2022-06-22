@@ -8,17 +8,18 @@ const App = () => {
   const [entries, setEntries] = useState(entriesJson);
 
   const likeMessage = (id) => {
-    console.log(`liked! message ${id}`);
+    // console.log(`liked! message ${id}`);
     const newEntry = entries.map((entry) => {
       // what we want to modify when we click !
       if (entry.id === id) {
         // entry.liked = true;
-        console.log(entry);
+        // console.log(entry);
         return { ...entry, liked: !entry.liked };
       } else {
         return entry;
       }
     });
+
     setEntries(newEntry);
   };
 
@@ -40,7 +41,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Message History</h1>
-        <h2>Total Likes: {totalLikes} </h2>
+        <h2>Total Likes: {totalLikes} ❤️s </h2>
       </header>
       <main>
         <ChatLog
