@@ -1,27 +1,48 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 
-const ChatEntry = ({sender, body, timeStamp}) => {
 
-let senderClass = 'chat-entry local'
-if (sender === 'Estragon') {
-  senderClass = 'chat-entry remote'
+const ChatEntry = (props) => {
+  const [likeButton, setLikeButton] = useState('🤍');
+
+  const onLikedButtonClick = () => {
+    const updatedMessage = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.liked,
+  
+  // let senderClass = 'chat-entry local'
+  // if (sender === 'Estragon') {
+  //   senderClass = 'chat-entry remote'
 }
+      props.updateMessageData(updatedMessage);
+      setLikeButton(updatedMessage.liked ? '❤️' : '🤍');
+      const bool = likeButton === '🤍';
+      props.updateTotalLikes(bool);
+  };
 
+  const localRemote =
+    props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
 
 
 
 
   return (
-    <div className={senderClass}>
-      <h2 className="entry-name"> {sender} </h2>
+    <div className={localRemote}>
+      <h2 className="entry-name"> {props.sender} </h2>
       <section className="entry-bubble">
-        <p> {body} </p>
-        <p className="entry-time"><TimeStamp time={timeStamp} /></p>
-        <button className="like">🤍</button>
+        <p> {props.body} </p>
+        <p className="entry-time">
+          <TimeStamp time={props.timeStamp} />
+        </p>
+        <button onClick={onLikedButtonClick} className="like">
+          {likeButton}
+        </button>
       </section>
     </div>
   );
@@ -35,10 +56,14 @@ if (sender === 'Estragon') {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
-  
-  sender: PropTypes.string.isRequired,
+  id: PropTypes.number,
   body: PropTypes.string.isRequired,
+  liked: PropTypes.bool,
   timeStamp: PropTypes.string.isRequired,
+  totalLikes: PropTypes.number,
+  updateMessageData: PropTypes.func,
+  updateTotalLikes: PropTypes.func,
+  
 };
 
 export default ChatEntry;
