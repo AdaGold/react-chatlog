@@ -1,27 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
+import TimeStamp froçm './TimeStamp';
 
 const ChatEntry = (props) => {
-  // const [likeCount, setLikeCount] = useState(0);
-
-  // const likeMessage = () => {
-  //   setLikeCount(likeCount +1);
-  // }
-
-  // const [likeMessage, setLikeMessage] = useState(liked);
-  // const likeButton = liked? '❤️' : '🤍';
-
   // FUNCTION TO CALCULATE YEARS AGO !!
-  // const handleLike = () => {
-  //   props.onLikeMessage(props.id);
-  // };
 
-  // const handleUnlikeMessage = () => {
-  //   props.onUnlikeMessage(props.id);
-  // };
-
-  // const [liked, setLiked] = useState();
   const handleLikeButton = () => {
     props.onLikeMessage(props.id);
   };
@@ -33,12 +17,12 @@ const ChatEntry = (props) => {
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
-        <p className="entry-time">{props.timeStamp} 4 years ago/</p>
+        <p className="entry-time">
+          <TimeStamp time={props.timeStamp} />
+        </p>
         <button className="like" onClick={handleLikeButton}>
           {heartButton}
         </button>
-
-        {/* <button onClick={handleUnlikeMessage}>unlikeButton</button> */}
       </section>
     </div>
   );
@@ -50,17 +34,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  onLikeMessage: PropTypes.func.isRequired,
-  // onUnlikeMessage: PropTypes.func.isRequired,
-
-  //Fill with correct proptypes
+  onLikeMessage: PropTypes.func,
 };
-
-// let sender = 'Estragon';
-// let body =
-//   'NO! YOU ARE A ROBOT!! I am a human being. Just like the one that created you.';
-// let timeStamp = '2018-05-29T23:00:08+00:00';
-//     ❤️
-// ChatEntry(sender, body, timeStamp);
 
 export default ChatEntry;

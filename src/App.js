@@ -23,12 +23,6 @@ const App = () => {
     setEntries(newEntry);
   };
 
-  // const unlikeMessage = (id) => {
-  //   console.log(`unregister ${id}`);
-  // };
-
-  // const [liked, setLiked] = useState(liked);
-  // const button = liked ? '❤️' : '🤍';
 
   const totalLikes = entries.reduce((total, entry) => {
     if (entry.liked === true) {
@@ -47,7 +41,7 @@ const App = () => {
         <ChatLog
           entries={entries}
           onLikeMessage={likeMessage}
-          // onUnlikeMessage={unlikeMessage}
+
         />
       </main>
     </div>
