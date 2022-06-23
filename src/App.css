@@ -72,3 +72,12 @@
 .purple {
   color: purple
 }
+
+#numHeart{
+  text-align: center;
+  font-size: 35pt;
+  background-color: black;
+  color: white;
+  margin-left: 300pt;
+  margin-right: 300pt
+}
