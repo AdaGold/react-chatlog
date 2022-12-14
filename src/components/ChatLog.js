@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 
 import ChatEntry from './ChatEntry';
 
-import entries from '../data/messages.json';
-
 function ChatLog({ entries }) {
   const entryComponents = [];
 
