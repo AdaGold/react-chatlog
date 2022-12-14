@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 
 import ChatEntry from './ChatEntry';
 
-import messages from '../data/messages.json';
+import entries from '../data/messages.json';
 
-function ChatLog({ messages }) {
+function ChatLog({ entries }) {
   const entryComponents = [];
 
-  for (const message of messages) {
+  for (const message of entries) {
     entryComponents.push(
       <li key={message.id}>
         <ChatEntry
