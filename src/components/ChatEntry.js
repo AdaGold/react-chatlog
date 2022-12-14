@@ -25,8 +25,8 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  timestamp: PropTypes.instanceOf(TimeStamp).isRequired,
-  liked: PropTypes.bool.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool,
 };
 
 export default ChatEntry;
