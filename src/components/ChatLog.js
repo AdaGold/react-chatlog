@@ -10,7 +10,7 @@ const ChatLog = (props) => {
 
   const messages = entries.map((message) => {
     return (
-      <div key={message.id}>
+      <div>
         <ChatEntry
           sender={message.sender}
           body={message.body}

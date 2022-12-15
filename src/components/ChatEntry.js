@@ -3,23 +3,40 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
-  const sender = props.sender;
-  const body = props.body;
-  const timeStamp = props.timeStamp;
+// const ChatEntry = (props) => {
+//   const sender = props.sender;
+//   const body = props.body;
+//   const timeStamp = props.timeStamp;
+//   const id = props.id;
 
-  return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">{sender}</h2>
-      <section className="entry-bubble">
-        <p>{body}</p>
-        <p className="entry-time">
-          <TimeStamp time={timeStamp} />
-        </p>
-        <button className="like">🤍</button>
-      </section>
-    </div>
-  );
+const ChatEntry = ({ id, sender, body, timeStamp }) => {
+  if (sender === 'Vladimir') {
+    return (
+      <div className="chat-entry local">
+        <h2 className="entry-name">{sender}</h2>
+        <section className="entry-bubble">
+          <p>{body}</p>
+          <p className="entry-time">
+            <TimeStamp time={timeStamp} />
+          </p>
+          <button className="like">🤍</button>
+        </section>
+      </div>
+    );
+  } else {
+    return (
+      <div className="chat-entry remote">
+        <h2 className="entry-name">{sender}</h2>
+        <section className="entry-bubble">
+          <p>{body}</p>
+          <p className="entry-time">
+            <TimeStamp time={timeStamp} />
+          </p>
+          <button className="like">🤍</button>
+        </section>
+      </div>
+    );
+  }
 };
 
 ChatEntry.propTypes = {
