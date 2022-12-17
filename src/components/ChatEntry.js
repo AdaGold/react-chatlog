@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+  const heartColor = props.like ? 'redheart' : 'grayheart';
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
@@ -12,7 +13,13 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className="like">🤍</button>
+        <p className="like-count">{props.likeCount}</p>
+        <button
+          className={heartColor}
+          onClick={() => props.onLikeMessage(props.id)}
+        >
+          🤍
+        </button>
       </section>
     </div>
   );
@@ -24,6 +31,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  likeCount: PropTypes.number.isRequired,
 };
 
 export default ChatEntry;
