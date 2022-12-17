@@ -14,7 +14,7 @@ const App = () => {
       </header>
       <main>
       <div>
-        <ChatEntry sender=chatData.sender>
+        <ChatEntry />
         </div>
         
       </main>
