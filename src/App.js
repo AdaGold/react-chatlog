@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
 import { useState } from 'react';
 
@@ -13,10 +13,9 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-      <div>
-        <ChatEntry sender=chatData.sender>
+        <div>
+          <ChatLog entries={chatData} />
         </div>
-        
       </main>
     </div>
   );
