@@ -14,6 +14,7 @@ const ChatEntry = (props) => {
 
   let locationClass = entrySender === 'Vladimir' ? 'local' : 'remote';
   let heartCondition = entryLiked === true ? '🤍' : '❤';
+  let heartClass = entryLiked === true ? 'like' : '';
 
   function changeLike(likedStatus) {
     updateLike(entryId, likedStatus);
@@ -29,7 +30,7 @@ const ChatEntry = (props) => {
           onClick={() => {
             changeLike(!entryLiked);
           }}
-          className="like"
+          className={heartClass}
         >
           {heartCondition}
         </button>

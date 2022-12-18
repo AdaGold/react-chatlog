@@ -10,6 +10,7 @@ const App = () => {
   });
 
   const [chatLog, setChatLog] = useState(initialCopy);
+  const [likeCount, setLikeCount] = useState(0);
 
   const updateLike = (messageId, likedStatus) => {
     const newMessageList = [];
@@ -26,12 +27,20 @@ const App = () => {
       }
     }
     setChatLog(newMessageList);
+    if (likedStatus) {
+      setLikeCount(likeCount + 1);
+    } else {
+      setLikeCount(likeCount - 1);
+    }
   };
 
   return (
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
+        <section id="heartWidget">
+          <span>{likeCount}🤍s</span>
+        </section>
       </header>
       <main>
         <ChatLog updateLike={updateLike} entries={chatLog} />
