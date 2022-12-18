@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ChatLog from './components/ChatLog';
+import { useState } from 'react';
 
 const INITIAL_CHAT = [
   {
@@ -199,6 +200,24 @@ const App = () => {
     return { ...chatentry };
   });
 
+  const [chatData, setChatData] = useState(initialCopy);
+
+  const updateLikes = (chatentryId) => {
+    console.log('updateLikes called');
+    const newChatEntries = [];
+    for (const chat of chatData) {
+      if (chat.id !== chatentryId) {
+        newChatEntries.push(chat);
+      } else {
+        const newChat = {
+          ...chat,
+          liked: !chat.liked,
+        };
+        newChatEntries.push(newChat);
+      }
+      setChatData(newChatEntries);
+    }
+  };
   return (
     <div id="App">
       <header>
@@ -207,7 +226,7 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog entries={initialCopy} />
+        <ChatLog entries={chatData} updateLikes={updateLikes} />
       </main>
     </div>
   );

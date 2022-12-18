@@ -2,18 +2,19 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
-import { useState } from 'react';
 
-const ChatEntry = ({ sender, body, timeStamp }) => {
+const ChatEntry = ({ id, sender, body, timeStamp, liked, updateLikes }) => {
   return (
-    <div className="chat-entry local">
+    <div className="chat-entry local" key={id}>
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time">
           <TimeStamp time={timeStamp} />
         </p>
-        <button className="like">🤍</button>
+        <button className="like" onClick={() => updateLikes(id)}>
+          {liked ? '❤️' : '🤍'}
+        </button>
       </section>
     </div>
   );

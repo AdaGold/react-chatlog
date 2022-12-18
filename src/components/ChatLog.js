@@ -3,14 +3,18 @@ import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
   const chatEntryComponents = [];
-  const chatLog = props.entries;
+  const chatEntries = props.entries;
+  const updateLikes = props.updateLikes;
 
-  for (const chatentry of chatLog) {
+  for (const chatentry of chatEntries) {
     chatEntryComponents.push(
       <ChatEntry
+        id={chatentry.id}
         sender={chatentry.sender}
         body={chatentry.body}
         timestamp={chatentry.timestamp}
+        liked={chatentry.liked}
+        updateLikes={updateLikes}
       />
     );
   }
