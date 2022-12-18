@@ -11,8 +11,7 @@ const App = () => {
 
   const [chatLog, setChatLog] = useState(initialCopy);
 
-  const updateLike = (messageId, liked) => {
-    // console.log(`in UpdateLike, initial value is ${liked}`);
+  const updateLike = (messageId, likedStatus) => {
     const newMessageList = [];
     for (const message of chatLog) {
       if (message.id !== messageId) {
@@ -20,10 +19,10 @@ const App = () => {
       } else {
         const newMessage = {
           ...message,
-          liked: !liked,
+          liked: likedStatus,
         };
         newMessageList.push(newMessage);
-        // console.log(`final liked stats is ${newMessage.liked}`);
+        console.log(likedStatus);
       }
     }
     setChatLog(newMessageList);
@@ -35,7 +34,7 @@ const App = () => {
         <h1>Chat between Vladimir and Estragon</h1>
       </header>
       <main>
-        <ChatLog updateLike={updateLike} entries={chatMessages} />
+        <ChatLog updateLike={updateLike} entries={chatLog} />
       </main>
     </div>
   );

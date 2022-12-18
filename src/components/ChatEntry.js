@@ -13,6 +13,11 @@ const ChatEntry = (props) => {
   const updateLike = props.updateLike;
 
   let locationClass = entrySender === 'Vladimir' ? 'local' : 'remote';
+  let heartCondition = entryLiked === true ? '🤍' : '❤';
+
+  function changeLike(likedStatus) {
+    updateLike(entryId, likedStatus);
+  }
 
   return (
     <div className={`chat-entry ${locationClass}`}>
@@ -21,10 +26,12 @@ const ChatEntry = (props) => {
         <p>{entryBody}</p>
         <p className="entry-time">{entryRelativeTime}</p>
         <button
-          onClick={() => updateLike(entryId, entryLiked)}
+          onClick={() => {
+            changeLike(!entryLiked);
+          }}
           className="like"
         >
-          🤍
+          {heartCondition}
         </button>
       </section>
     </div>
