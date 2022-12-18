@@ -14,6 +14,7 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
+        <h3>{props.likeCount}</h3>
         <button className="like" onClick={() => props.onLikeMessage(props.id)}>
           {heartColor}
         </button>
@@ -28,7 +29,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string,
   time: PropTypes.string,
   liked: PropTypes.bool.isRequired,
-  onLikeMessage: PropTypes.func,
+  likeCount: PropTypes.number,
 };
 
 export default ChatEntry;

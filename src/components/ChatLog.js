@@ -13,6 +13,7 @@ const ChatLog = (props) => {
         time={entry.timeStamp}
         liked={entry.liked}
         onLikeMessage={props.onLikeMessage}
+        likeCount={entry.likeCount}
       />
     );
   });
@@ -27,6 +28,7 @@ ChatLog.propTypes = {
       body: PropTypes.string,
       time: PropTypes.string,
       liked: PropTypes.bool.isRequired,
+      likeCount: PropTypes.number,
     })
   ),
   onLikeMessage: PropTypes.func,
