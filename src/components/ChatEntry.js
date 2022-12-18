@@ -3,47 +3,35 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-// const ChatEntry = (props) => {
-//   const sender = props.sender;
-//   const body = props.body;
-//   const timeStamp = props.timeStamp;
-//   const id = props.id;
+const ChatEntry = ({ id, sender, body, timeStamp, liked, updateLike }) => {
+  const senderName =
+    sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
 
-const ChatEntry = ({ id, sender, body, timeStamp }) => {
-  if (sender === 'Vladimir') {
-    return (
-      <div className="chat-entry local">
-        <h2 className="entry-name">{sender}</h2>
-        <section className="entry-bubble">
-          <p>{body}</p>
-          <p className="entry-time">
-            <TimeStamp time={timeStamp} />
-          </p>
-          <button className="like">🤍</button>
-        </section>
-      </div>
-    );
-  } else {
-    return (
-      <div className="chat-entry remote">
-        <h2 className="entry-name">{sender}</h2>
-        <section className="entry-bubble">
-          <p>{body}</p>
-          <p className="entry-time">
-            <TimeStamp time={timeStamp} />
-          </p>
-          <button className="like">🤍</button>
-        </section>
-      </div>
-    );
-  }
+  const likeButtonContent = liked ? '❤️' : '🤍';
+
+  return (
+    <div className={senderName}>
+      <h2 className="entry-name">{sender}</h2>
+      <section className="entry-bubble">
+        <p>{body}</p>
+        <p className="entry-time">
+          <TimeStamp time={timeStamp} />
+        </p>
+        <button onClick={() => updateLike(id, !liked)}>
+          {likeButtonContent}
+        </button>
+      </section>
+    </div>
+  );
 };
 
 ChatEntry.propTypes = {
+  // id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
-  liked: PropTypes.bool,
+  liked: PropTypes.bool.isRequired,
+  updateLike: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
