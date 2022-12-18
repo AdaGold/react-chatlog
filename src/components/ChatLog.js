@@ -6,10 +6,6 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = ({ entries, updateLike }) => {
-  // console.log(typeof updateLike);
-  // console.log(entries);
-  // const entries = entries;
-
   const messages = entries.map((message) => {
     return (
       <div key={message.id}>

@@ -11,12 +11,22 @@ const App = () => {
 
   const [chatData, setChatData] = useState(INITIALCOPY);
 
+  const [likedCount, setLikedCount] = useState(0);
+
+  const likedWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
+
   const updateLike = (chatEntryId, updatedLike) => {
     console.log('updateLike is being called');
+    let newLikeCount = likedCount;
     const newChatData = chatData.map((chatEntry) => {
       if (chatEntry.id !== chatEntryId) {
         return chatEntry;
       } else {
+        if (updatedLike) {
+          newLikeCount++;
+        } else {
+          newLikeCount--;
+        }
         const newChat = {
           ...chatEntry,
           liked: updatedLike,
@@ -25,13 +35,18 @@ const App = () => {
       }
     });
     setChatData(newChatData);
+    setLikedCount(newLikeCount);
   };
 
   console.log('app loaded successfully');
+
   return (
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
+        <section>
+          <span className="widget heartWidget">{likedWidget}</span>
+        </section>
       </header>
       <main>
         <ChatLog entries={chatData} updateLike={updateLike} />
