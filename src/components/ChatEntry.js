@@ -14,7 +14,9 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className="like">🤍</button>
+        <p>likes: {props.likeCount}</p>
+        {/* using id to reference specific chat entry; maybe use props.liked if that doesn't work */}
+        <button className="like" onClick={() => props.likeChatEntry(props.id)}>🤍</button>
       </section>
     </div>
   );
