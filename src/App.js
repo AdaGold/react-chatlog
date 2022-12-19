@@ -8,6 +8,8 @@ const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
   // const [likeCount, setLikeCount] = useState(0);
 
+
+  // event handler to increment likeCount
   const likeChatEntry = (id) => {
     console.log(`Liked message ${id}`)
     const newChatData = chatData.map(entry => {
@@ -31,7 +33,7 @@ const App = () => {
           <ChatLog 
           entries={chatData}
           onLikeChatEntry={likeChatEntry}
-           />
+          />
         </div>
       </main>
     </div>

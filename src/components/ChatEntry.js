@@ -16,7 +16,7 @@ const ChatEntry = (props) => {
         </p>
         <p>likes: {props.likeCount}</p>
         {/* using id to reference specific chat entry; maybe use props.liked if that doesn't work */}
-        <button className="like" onClick={() => props.likeChatEntry(props.id)}>🤍</button>
+        <button className="like" onClick={() => props.onLikeChatEntry(props.id)}>🤍</button>
       </section>
     </div>
   );
