@@ -17,7 +17,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, updateLike }) => {
         <p className="entry-time">
           <TimeStamp time={timeStamp} />
         </p>
-        <button onClick={() => updateLike(id, !liked)}>
+        <button className="like" onClick={() => updateLike(id, !liked)}>
           {likeButtonContent}
         </button>
       </section>
