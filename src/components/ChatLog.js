@@ -8,14 +8,16 @@ const ChatLog = (props) => {
 
   for (const chatentry of chatEntries) {
     chatEntryComponents.push(
-      <ChatEntry
-        id={chatentry.id}
-        sender={chatentry.sender}
-        body={chatentry.body}
-        timestamp={chatentry.timestamp}
-        liked={chatentry.liked}
-        updateLikes={updateLikes}
-      />
+      <div key={chatentry.id}>
+        <ChatEntry
+          id={chatentry.id}
+          sender={chatentry.sender}
+          body={chatentry.body}
+          timeStamp={chatentry.timeStamp}
+          liked={chatentry.liked}
+          updateLikes={updateLikes}
+        />
+      </div>
     );
   }
 
