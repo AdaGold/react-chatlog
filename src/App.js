@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
+  // const [likeCount, setLikeCount] = useState(0);
 
   const likeChatEntry = (id) => {
     console.log(`Liked message ${id}`)
@@ -16,7 +17,7 @@ const App = () => {
         return entry;
       }
     });
-
+    // setLikeCount()
     setChatData(newChatData);
   }
 
