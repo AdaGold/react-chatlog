@@ -26,7 +26,6 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, updateLike }) => {
 };
 
 ChatEntry.propTypes = {
-  // id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,

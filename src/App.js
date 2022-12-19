@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-// import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
 
@@ -13,7 +12,7 @@ const App = () => {
 
   const [likedCount, setLikedCount] = useState(0);
 
-  const likedWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
+  const heartWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
 
   const updateLike = (chatEntryId, updatedLike) => {
     console.log('updateLike is being called');
@@ -45,7 +44,9 @@ const App = () => {
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
         <section>
-          <span className="widget heartWidget">{likedWidget}</span>
+          <span className="widget" id="heartWidget">
+            {heartWidget}
+          </span>
         </section>
       </header>
       <main>
