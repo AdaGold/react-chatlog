@@ -10,18 +10,28 @@ const App = () => {
 
 
   // event handler to increment likeCount
-  const likeChatEntry = (id) => {
-    console.log(`Liked message ${id}`)
-    const newChatData = chatData.map(entry => {
-      if (entry.id === id) {
-        return {...entry, likeCount: entry.likeCount + 1}
+  // const likeChatEntry = (id) => {
+  //   console.log(`Liked message ${id}`)
+  //   const newChatData = chatData.map(entry => {
+  //     if (entry.id === id) {
+  //       return {...entry, likeCount: entry.liked + 1}
+  //     } else {
+  //       return entry;
+  //     }
+  //   });
+  //   // setLikeCount()
+  //   setChatData(newChatData);
+  // }
+  const updateChatData = (updatedChatData) => {
+    const entries = chatData.map(entry => {
+      if (entry.id === updatedChatData.id) {
+        return updatedChatData
       } else {
-        return entry;
-      }
+        return entry
+      };
     });
-    // setLikeCount()
-    setChatData(newChatData);
-  }
+    setChatData(entries);
+  };
 
   return (
     <div id="App">
@@ -32,7 +42,8 @@ const App = () => {
         <div>
           <ChatLog 
           entries={chatData}
-          onLikeChatEntry={likeChatEntry}
+          // onLikeChatEntry={likeChatEntry}
+          onUpdateChatData={updateChatData}
           />
         </div>
       </main>

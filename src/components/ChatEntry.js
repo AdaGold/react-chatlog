@@ -4,6 +4,16 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+  const onHeartButtonClick = () => {
+    const updatedChatEntry = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      liked: !props.liked
+    };
+    props.onUpdateChatData(updatedChatEntry);
+  };
+  const heart = props.liked ? '❤️' : '🤍';
 
   return (
     <div className="chat-entry local">
@@ -16,7 +26,8 @@ const ChatEntry = (props) => {
         </p>
         <p>likes: {props.likeCount}</p>
         {/* using id to reference specific chat entry; maybe use props.liked if that doesn't work */}
-        <button className="like" onClick={() => props.onLikeChatEntry(props.id)}>🤍</button>
+        {/* <button className="like" onClick={() => props.onLikeChatEntry(props.id)}>🤍</button> */}
+        <button className="like" onClick={onHeartButtonClick}>{heart}</button>
       </section>
     </div>
   );
