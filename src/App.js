@@ -202,9 +202,12 @@ const App = () => {
 
   const [chatData, setChatData] = useState(initialCopy);
 
+  const userIdentify = chatData[0].sender;
+
   const updateLikes = (chatentryId) => {
     console.log('updateLikes called');
     const newChatEntries = [];
+
     for (const chat of chatData) {
       if (chat.id !== chatentryId) {
         newChatEntries.push(chat);
@@ -218,10 +221,16 @@ const App = () => {
       setChatData(newChatEntries);
     }
   };
+  const countLikes = () => {
+    return chatData.reduce((accumulator, count) => {
+      return count.liked ? accumulator + 1 : accumulator;
+    }, 0);
+  };
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>🤖 bot v bot chat 💬</h1>
+        <h2>{countLikes()} ❤️s</h2>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
