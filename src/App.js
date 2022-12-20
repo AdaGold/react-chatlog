@@ -22,13 +22,18 @@ const App = () => {
         return entry;
       }
     }));
+
+    
   } 
     
   const calcTotalLikes = (chatData) => {
     return chatData.reduce((total, entry) => {
-      return total + entry.likeCount;
+      if (entry.liked) {
+        total += 1
+      }
+      return total;
     }, 0)
-    console.log(likeCount);
+    // console.log(likeCount);
   };
 
   const totalLikeTally = calcTotalLikes(chatData);
