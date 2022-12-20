@@ -12,9 +12,7 @@ const ChatEntry = (props) => {
       body: props.body,
       timeStamp: props.timeStamp,
       liked: !props.liked,
-      likeCount: props.onIncreaseLike(props.id),
     };
-    // props.setLikeCount();
     props.onUpdateChatData(updatedChatEntry);
   };
 
@@ -29,9 +27,7 @@ const ChatEntry = (props) => {
         <p className="entry-time">
         <TimeStamp time={props.timeStamp} />
         </p>
-        {/* using id to reference specific chat entry; maybe use props.liked if that doesn't work */}
-        {/* <button className="like" onClick={() => props.onLikeChatEntry(props.id)}>🤍</button> */}
-        <button className="like" onClick={() => onHeartButtonClick()}>{heart}</button>
+        <button className="like" onClick={onHeartButtonClick}>{heart}</button>
       </section>
     </div>
   );
@@ -43,8 +39,6 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  likeCount: PropTypes.number.isRequired,
-  onIncreaseLike: PropTypes.func.isRequired
 };
 
 export default ChatEntry;

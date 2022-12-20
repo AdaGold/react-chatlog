@@ -6,24 +6,7 @@ import { useState } from 'react';
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
-  const [likeCount, setLikeCount] = useState(0);
 
-
-  // event handler to increment likeCount
-  const increaseLike = (id) => {
-    console.log(`Liked message ${id}`)
-    console.log(likeCount)
-    setChatData(chatData => chatData.map(entry => {
-      if (entry.id === id) {
-        console.log(entry.likeCount);
-        return {...entry, likeCount: entry.likeCount + 1}
-        console.log(likeCount);
-      } else {
-        return entry;
-      }
-    }));
-  } 
-    
   const calcTotalLikes = (chatData) => {
     return chatData.reduce((total, entry) => {
       if (entry.liked) {
@@ -31,7 +14,6 @@ const App = () => {
       }
       return total;
     }, 0)
-    // console.log(likeCount);
   };
 
   const totalLikeTally = calcTotalLikes(chatData);
@@ -58,7 +40,6 @@ const App = () => {
         <div>
           <ChatLog 
           entries={chatData}
-          onIncreaseLike={increaseLike}
           onUpdateChatData={updateChatData}
           />
         </div>

@@ -11,8 +11,6 @@ const ChatLog = (props) => {
     body={chatEntry.body}
     timeStamp={chatEntry.timeStamp}
     liked={chatEntry.liked}
-    likeCount={chatEntry.likeCount}
-    onIncreaseLike={props.onIncreaseLike}
     onUpdateChatData={props.onUpdateChatData}
     />
   })
@@ -31,9 +29,7 @@ ChatLog.propTypes = {
     body: PropTypes.string.isRequired,
     timeStamp: PropTypes.string.isRequired,
     liked: PropTypes.bool.isRequired,
-    likeCount: PropTypes.number.isRequired,
   })),
-  onIncreaseLike: PropTypes.func.isRequired,
   onUpdateChatData: PropTypes.func.isRequired
 };
 
