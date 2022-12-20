@@ -22,8 +22,6 @@ const App = () => {
         return entry;
       }
     }));
-
-    
   } 
     
   const calcTotalLikes = (chatData) => {
@@ -37,7 +35,6 @@ const App = () => {
   };
 
   const totalLikeTally = calcTotalLikes(chatData);
-
 
   const updateChatData = (updatedChatData) => {
     const entries = chatData.map(entry => {
@@ -55,7 +52,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat Log</h1>
-        <div>Likes: {totalLikeTally}</div>
+        <div>Likes: {totalLikeTally} ❤️s</div>
       </header>
       <main>
         <div>
