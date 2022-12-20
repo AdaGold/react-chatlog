@@ -8,24 +8,23 @@ function App() {
   const [entries, setEntries] = useState(chatMessages);
 
   const likeMessage = (id) => {
-    setEntries((entries) =>
-      entries.map((entry) => {
+    setEntries((entries) => {
+      return entries.map((entry) => {
         if (entry.id === id) {
           return {
             ...entry,
             liked: !entry.liked,
-            likeCount: entry.likeCount + 1,
           };
         } else {
           return entry;
         }
-      })
-    );
+      });
+    });
   };
 
   const calcTotalLikes = (entries) => {
     return entries.reduce((total, entry) => {
-      return total + entry.likeCount;
+      return total + entry.liked;
     }, 0);
   };
 
@@ -33,11 +32,11 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Number of Likes: {totalLikeCount}</h2>
       <header>
         <h1>Application title</h1>
       </header>
       <main>
+        <div>{totalLikeCount} ❤️s</div>
         <ChatLog entries={entries} onLikeMessage={likeMessage} />
       </main>
     </div>
