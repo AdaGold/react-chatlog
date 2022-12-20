@@ -4,15 +4,20 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+
   const onHeartButtonClick = () => {
     const updatedChatEntry = {
       id: props.id,
       sender: props.sender,
       body: props.body,
-      liked: !props.liked
+      timeStamp: props.timeStamp,
+      liked: !props.liked,
+      likeCount: props.onIncreaseLike(props.id),
     };
+    // props.setLikeCount();
     props.onUpdateChatData(updatedChatEntry);
   };
+
   const heart = props.liked ? '❤️' : '🤍';
 
   return (
@@ -22,12 +27,11 @@ const ChatEntry = (props) => {
         <p>{props.id}</p>
         <p>{props.body}</p>
         <p className="entry-time">
-          <TimeStamp time={props.timeStamp} />
+        <TimeStamp time={props.timeStamp} />
         </p>
-        <p>likes: {props.likeCount}</p>
         {/* using id to reference specific chat entry; maybe use props.liked if that doesn't work */}
         {/* <button className="like" onClick={() => props.onLikeChatEntry(props.id)}>🤍</button> */}
-        <button className="like" onClick={onHeartButtonClick}>{heart}</button>
+        <button className="like" onClick={() => onHeartButtonClick()}>{heart}</button>
       </section>
     </div>
   );
@@ -40,7 +44,7 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
   likeCount: PropTypes.number.isRequired,
-  likeChatEntry: PropTypes.func.isRequired
+  onIncreaseLike: PropTypes.func.isRequired
 };
 
 export default ChatEntry;
