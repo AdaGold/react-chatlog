@@ -15,7 +15,6 @@ const App = () => {
   const heartWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
 
   const updateLike = (chatEntryId, updatedLike) => {
-    console.log('updateLike is being called');
     let newLikeCount = likedCount;
     const newChatData = chatData.map((chatEntry) => {
       if (chatEntry.id !== chatEntryId) {
@@ -36,8 +35,6 @@ const App = () => {
     setChatData(newChatData);
     setLikedCount(newLikeCount);
   };
-
-  console.log('app loaded successfully');
 
   return (
     <div id="App">
