@@ -1,28 +1,24 @@
 import React from 'react';
-import useState from 'react';
+import { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
-
-// const messages = [...chatMessages];
+import ChatLog from './components/ChatLog';
 
 const App = () => {
-  // const [messageData, setMessageData] = useState[messages];
-  console.log(chatMessages);
+  const [messagesList, setMessageList] = useState(chatMessages);
 
-  const messages = chatMessages.map((message, index) => {
-    return (
-      <li key={index}>
-        <ChatEntry
-          id={message.id}
-          sender={message.sender}
-          body={message.body}
-          timeStamp={message.timeStamp}
-          like={message.like}
-        ></ChatEntry>
-      </li>
-    );
-  });
+  const updateMessages = (id) => {
+    const newMessageList = messagesList.map((message) => {
+      if (id === message.id) {
+        message.liked = !message.liked;
+        return message;
+      } else {
+        return message;
+      }
+    });
+
+    setMessageList(newMessageList);
+  };
 
   return (
     <div id="App">
@@ -30,11 +26,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
-        {/* <ChatEntry message={messageData}></ChatEntry> */}
-        <ChatEntry />
-        {messages}
+        <ChatLog entries={messagesList} onLikeClick={updateMessages} />
       </main>
     </div>
   );

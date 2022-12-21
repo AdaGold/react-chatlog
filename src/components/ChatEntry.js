@@ -3,31 +3,39 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
+const ChatEntry = ({ id, sender, body, timeStamp, liked, onLikeClick }) => {
+  const localOrRemote =
+    sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
+  const likedDisplay = liked ? '❤️' : '🤍';
+
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+    <div className={localOrRemote}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
+        <p>{body}</p>
         <div className="entry-time">
-          <TimeStamp time={props.timeStamp} />
+          <TimeStamp time={timeStamp} />
         </div>
-        <button className="like">🤍</button>
+        <button
+          className="like"
+          onClick={() => {
+            onLikeClick(id);
+          }}
+        >
+          {likedDisplay}
+        </button>
       </section>
     </div>
   );
 };
 
 ChatEntry.propTypes = {
-  messages: PropTypes.arrayOf(
-    PropTypes.shape({
-      // id: PropTypes.number.isRequired,
-      sender: PropTypes.string.isRequired,
-      body: PropTypes.string.isRequired,
-      timeStamp: PropTypes.func,
-      like: PropTypes.bool.isRequired,
-    })
-  ),
+  onLikeClick: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.func,
+  liked: PropTypes.bool.isRequired,
 };
 
 export default ChatEntry;
