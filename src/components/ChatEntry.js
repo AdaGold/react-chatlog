@@ -5,21 +5,27 @@ import TimeStamp from './TimeStamp';
 import { useState } from 'react';
 
 const ChatEntry = (props) => {
-  const [chatData, setChatData] = useState(0);
+  const [like, setLike] = useState(0);
 
-  const heartToggle = (props) => {
-    setChatData((heartToggle) => chatData + 1);
+  const heartToggle = () => {
+    setLike(!like);
+    props.changeLike(props.id);
   };
+  const heartColor = like === true ? '❤️' : '🤍';
+
   return (
     <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+      <h2 className="entry-name">
+        {props.sender}
+        {props.liked}
+      </h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className="like" onClick={(e) => props.onHeartToggle(props.id)}>
-          🤍
+        <button className="like" onClick={heartToggle}>
+          {heartColor}
         </button>
       </section>
     </div>
@@ -28,11 +34,16 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
-  id: PropTypes.number,
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
-  liked: PropTypes.bool,
+  liked: PropTypes.bool.isRequired,
+  changeLike: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
+
+/* <button className="like" onClick={heartToggle}>
+          {heartColor}
+        </button> */

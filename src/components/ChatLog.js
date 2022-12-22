@@ -1,18 +1,19 @@
 import propTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({ entries }) => {
+const ChatLog = ({ entries, changeLike }) => {
   const chats = [];
 
   for (const entry of entries) {
     chats.push(
       <ChatEntry
-        key={entry.sender}
+        key={entry.id}
         sender={entry.sender}
         body={entry.body}
         timeStamp={entry.timeStamp}
         liked={entry.liked}
-        onHeartToggle={chats.onHeartToggle}
+        id={entry.id}
+        changeLike={changeLike}
       />
     );
   }
@@ -26,8 +27,9 @@ ChatLog.propTypes = {
       sender: propTypes.string.isRequired,
       body: propTypes.string.isRequired,
       timeStamp: propTypes.string.isRequired,
+      liked: propTypes.bool.isRequired,
     })
   ),
-  onHeartToggle: propTypes.func.isRequired,
+  changeLike: propTypes.func.isRequired,
 };
 export default ChatLog;
