@@ -3,8 +3,6 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 
 const ChatLog = ({ entries, onLikeClick }) => {
-  console.log(entries);
-
   const messages = entries.map((message, index) => {
     return (
       <div key={index}>
