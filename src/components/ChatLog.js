@@ -10,7 +10,6 @@ const ChatLog = ({ entries, updateLike }) => {
     return (
       <div key={message.id}>
         <ChatEntry
-          key={message.id}
           id={message.id}
           sender={message.sender}
           body={message.body}
