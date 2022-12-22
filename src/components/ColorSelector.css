@@ -1,0 +1,29 @@
+.colorSelector {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.red {
+  accent-color: red;
+  grid-column-start: 1;
+}
+
+.orange {
+  accent-color: orange;
+  grid-column-start: 2;
+}
+
+.green {
+  accent-color: green;
+  grid-column-start: 3;
+}
+
+.blue {
+  accent-color: blue;
+  grid-column-start: 4;
+}
+
+.violet {
+  accent-color: violet;
+  grid-column-start: 5;
+}

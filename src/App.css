@@ -50,6 +50,10 @@
   display: inline-block;
 }
 
+#form-check {
+  display: inline-block;
+}
+
 .red {
   color: #b22222;
 }

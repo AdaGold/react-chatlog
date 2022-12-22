@@ -13,8 +13,8 @@ const ChatEntry = (props) => {
   const updateLike = props.updateLike;
 
   let locationClass = entrySender === 'Vladimir' ? 'local' : 'remote';
-  let heartCondition = entryLiked === true ? '🤍' : '❤';
-  let heartClass = entryLiked === true ? 'like' : '';
+  let heartCondition = entryLiked === true ? '❤️' : '🤍';
+  // let heartClass = entryLiked === true ? 'like' : '';
 
   function changeLike(likedStatus) {
     updateLike(entryId, likedStatus);
@@ -26,12 +26,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{entryBody}</p>
         <p className="entry-time">{entryRelativeTime}</p>
-        <button
-          onClick={() => {
-            changeLike(!entryLiked);
-          }}
-          className={heartClass}
-        >
+        <button onClick={() => changeLike(!entryLiked)} className="like">
           {heartCondition}
         </button>
       </section>
