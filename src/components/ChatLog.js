@@ -12,6 +12,7 @@ const ChatLog = ({ entries }) => {
         body={entry.body}
         timeStamp={entry.timeStamp}
         liked={entry.liked}
+        onHeartToggle={chats.onHeartToggle}
       />
     );
   }
@@ -27,5 +28,6 @@ ChatLog.propTypes = {
       timeStamp: propTypes.string.isRequired,
     })
   ),
+  onHeartToggle: propTypes.func.isRequired,
 };
 export default ChatLog;
