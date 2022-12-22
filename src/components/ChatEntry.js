@@ -43,7 +43,3 @@ ChatEntry.propTypes = {
 };
 
 export default ChatEntry;
-
-/* <button className="like" onClick={heartToggle}>
-          {heartColor}
-        </button> */

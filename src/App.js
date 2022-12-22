@@ -43,7 +43,7 @@ const App = () => {
       <main>
         <ChatLog
           entries={chats}
-          ChangeLike={changeLike}
+          changeLike={changeLike}
           // numLikes={likeCount()}
         />
       </main>
