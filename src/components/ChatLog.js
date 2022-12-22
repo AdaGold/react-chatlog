@@ -26,7 +26,7 @@ ChatLog.propTypes = {
       sender: PropTypes.string.isRequired,
       body: PropTypes.string,
       time: PropTypes.string,
-      liked: PropTypes.bool.isRequired,
+      liked: PropTypes.bool,
     })
   ),
   onLikeMessage: PropTypes.func,
