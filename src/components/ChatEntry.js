@@ -28,7 +28,7 @@ const ChatEntry = ({ updateChat, ...message}) => {
 };
 
 ChatEntry.propTypes = {
-  //proptypes using learn template
+  //propTypes using learn template
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
