@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 //spread 
+//TimeStamp has time prop
 const ChatEntry = ({ updateChat, ...message}) => {
 
   const onLikeClick = () => {
@@ -16,9 +17,7 @@ const ChatEntry = ({ updateChat, ...message}) => {
       <h2 className="entry-name">{message.sender}</h2>
       <section className="entry-bubble">
         <p>{message.body}</p>
-        <p className="entry-time">
-          //TimeStamp has time prop
-          TimeStamp time={message.timeStamp} /> 
+        <p className="entry-time"><TimeStamp time={message.timeStamp} /> 
         </p>
         <button className="like" onClick={onLikeClick}>{message.liked ? '❤️':'🤍'}
         </button>
