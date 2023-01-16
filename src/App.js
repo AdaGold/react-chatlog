@@ -31,7 +31,7 @@ function App() {
   const totalLikeCount = calcTotalLikes(entries);
 
   return (
-    <div className="App">
+    <div id="App">
       <header>
         <h1>Application title</h1>
       </header>
