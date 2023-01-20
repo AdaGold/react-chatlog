@@ -1,9 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import {useState} from 'react';
-import ChatLog from './components/ChatLog'
-
+import ChatLog from './components/ChatLog';
 
 const chatDataList = chatMessages
 
@@ -31,12 +30,9 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
         <h1>My Chat Log</h1>
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
         <h2>{totalHearts} ❤️s</h2>
         <ChatLog entries={chatData} onToggleHeart ={toggleHeart}/>
       </main>

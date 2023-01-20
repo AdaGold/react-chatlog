@@ -1,9 +1,5 @@
-import React from 'react';
-import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
-import './ChatLog.css';
-// import TimeStamp from'./TimeStamp';
-
+import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
 
@@ -32,8 +28,8 @@ ChatLog.propTypes = {
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired,
-    })),
-    onToggleHeart: PropTypes.func.isRequired,
+      })),
+      onToggleHeart: PropTypes.func.isRequired,
 }
 
 export default ChatLog;
