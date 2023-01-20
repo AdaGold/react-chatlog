@@ -28,8 +28,8 @@ ChatLog.propTypes = {
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired,
-      })),
-      onToggleHeart: PropTypes.func.isRequired,
+    })),
+    onToggleHeart: PropTypes.func.isRequired,
 }
 
 export default ChatLog;
