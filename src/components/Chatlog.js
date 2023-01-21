@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import ChatEntry from './ChatEntry';
+import ChatEntry from './ChatEntry.js';
 
 const ChatLog = (props) => {
 

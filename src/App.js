@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatLog from './components/ChatLog';
+import ChatLog from './components/ChatLog.js';
 
 const chatDataList = chatMessages
 
