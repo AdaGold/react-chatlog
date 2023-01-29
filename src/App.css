@@ -28,6 +28,18 @@
 
 #App header section {
   background-color: #e0ffff;
+  color: black;
+  height: 4rem;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#App header section span {
+  font-size: 1.25rem;
+  color: rgba(100%, 0%, 0%, 0);
+  text-shadow: 0 0 0 red;
 }
 
 #App .widget {
@@ -35,40 +47,40 @@
   line-height: 0.5em;
   border-radius: 10px;
   color: black;
-  font-size:0.8em;
+  font-size: 0.8em;
   padding-left: 1em;
   padding-right: 1em;
 }
 
 #App #heartWidget {
   font-size: 1.5em;
-  margin: 1em
+  margin: 1em;
 }
 
 #App span {
-  display: inline-block
+  display: inline-block;
 }
 
 .red {
-  color: #b22222
+  color: #b22222;
 }
 
 .orange {
-  color: #e6ac00
+  color: #e6ac00;
 }
 
 .yellow {
-  color: #e6e600
+  color: #e6e600;
 }
 
 .green {
-  color: green
+  color: green;
 }
 
 .blue {
-  color: blue
+  color: blue;
 }
 
 .purple {
-  color: purple
+  color: purple;
 }
