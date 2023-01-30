@@ -7,9 +7,7 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
   const [Liked, setLiked] = useState(props.liked);
-  //const toggleLikes = () =>{
-    //setLikes(!Likes);
-  //};
+  
   const heartColor = Liked ? '❤️' : '🤍';
   
   return (
@@ -20,7 +18,7 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}/>
         </p>
-        <div className="like" onClick={()=> setLiked(!Liked)}>{heartColor}</div>
+        <button className="like" onClick={()=> setLiked(!Liked)}>{heartColor}</button>
       </section>
     </div>
   );
