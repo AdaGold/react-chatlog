@@ -1,16 +1,25 @@
 //Presentational Component
-
-import React, { useState } from 'react';
+import React from 'react';
 import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  const [isLike, setLike] = useState(props.liked);
-  const heartColor = isLike ? 'liked' : 'like';
-  const changeLike = () => {
-    setLike(!isLike);
+  const changeLikeData = () => {
+    const chatData = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.liked,
+    };
+    props.updateChatsData(chatData);
   };
+  //I was did the recolor heart emoji first.
+  // const heartColor = props.liked ? 'liked' : 'like';
+
+  const heartColor = props.liked ? '❤️' : '🤍';
+
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
@@ -19,8 +28,8 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className={heartColor} onClick={changeLike}>
-          🤍
+        <button className="like" onClick={changeLikeData}>
+          {heartColor}
         </button>
       </section>
     </div>
@@ -32,6 +41,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  updateChatsData: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
