@@ -1,30 +1,35 @@
-import React, { useState } from 'react';
 import './App.css';
 import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
+import React, { useState } from 'react';
 
 const App = () => {
-  // const [entries, setEntries] = useState(chatMessages);
-  // const updateChatDatas = (updateEntrie) => {
-  //   const chatDatas = entries.map((data) => {
-  //     if (data.id === updateEntrie.id) {
-  //       return updateEntrie;
-  //     }else{
-  //       return data;
-  //     }
-  //   });
-  //   setEntries(chatDatas);
-  // };
+  const [chatsData, setChatsData] = useState(chatMessages);
+
+  const updateChatsData = (updateChat) => {
+    const chats = chatsData.map((chat) => {
+      if (chat.id === updateChat.id) {
+        return updateChat;
+      } else {
+        return chat;
+      }
+    });
+    setChatsData(chats);
+  };
+
+  const heartCounts = chatsData.filter((chat) => chat.liked === true);
 
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
         <section>
-          0 &nbsp; <span>🤍</span>s
+          <p>{heartCounts.length} ❤️s</p>
         </section>
       </header>
-      <main>{<ChatLog entries={chatMessages} />}</main>
+      <main>
+        <ChatLog entries={chatsData} updateChatsData={updateChatsData} />
+      </main>
     </div>
   );
 };
