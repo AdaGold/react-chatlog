@@ -19,9 +19,10 @@ const ChatEntry = (props) => {
   // const heartColor = props.liked ? 'liked' : 'like';
 
   const heartColor = props.liked ? '❤️' : '🤍';
+  const messageType = props.sender === 'Vladimir' ? 'local' : 'remote';
 
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${messageType}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
