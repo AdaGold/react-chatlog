@@ -18,8 +18,15 @@ Once you've identified which data will be used by which components, consider the
 
 Finally, after analyzing the provided data and designing a set of components and their relationships to the data, you should write down your proposed design.
 
-
 Consider discussing your design with a classmate. Is their design different from yours? If so, discuss the reasoning for each of yours designs and determine any possible pros/cons for both approaches.
+
+### Hint: The `TimeStamp` Component
+
+The `TimeStamp` component has already been implemented for you. The `ChatEntry` component should use an instance of the `TimeStamp` component.
+
+The `TimeStamp` component expects one `prop`: `time`.
+
+If this component receives `time` through `props` correctly, it will render the time in a nice format!
 
 ## Setup
 
