@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-  import Chatlog from './components/Chatlog';
+import ChatLog from './components/ChatLog';
   
 const App = () => {
   const [entries, setEntries] = React.useState(chatMessages);
@@ -31,7 +31,7 @@ const App = () => {
       </header>
       <main>
         <p>{totalLiked()} ❤️s</p>
-        <Chatlog entries={entries} changeLiked ={changeLiked}/>
+        <ChatLog entries={entries} changeLiked ={changeLiked}/>
       </main>
     </div>
   );
