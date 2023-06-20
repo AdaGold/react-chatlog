@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
 
-const Chatlog = ({ entries, changeLiked}) => {
+const ChatLog = ({ entries, changeLiked}) => {
     // console.log(messages)
     const messageComponents = entries.map((entry, index) => {
         return (
@@ -23,13 +23,13 @@ const Chatlog = ({ entries, changeLiked}) => {
 
     return (
         <section>
-            <div>Chatlog</div>
+            <div>ChatLog</div>
             <ul>{messageComponents}</ul> 
         </section>
     );
 };
 
-Chatlog.propTypes = {
+ChatLog.propTypes = {
     entries: PropTypes.arrayOf(
         PropTypes.shape({
             sender: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ Chatlog.propTypes = {
     )
 };
 
-export default Chatlog
+export default ChatLog
