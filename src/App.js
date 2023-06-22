@@ -37,7 +37,4 @@ const App = () => {
   );
 };
 
-// const Chatlog = ({ entries }) => {
-// const [entries] = React.useState     (chatMessages);
-
 export default App;

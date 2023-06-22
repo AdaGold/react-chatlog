@@ -32,9 +32,11 @@ const ChatLog = ({ entries, changeLiked}) => {
 ChatLog.propTypes = {
     entries: PropTypes.arrayOf(
         PropTypes.shape({
+            id: PropTypes.number.isRequired,
             sender: PropTypes.string.isRequired,
             body: PropTypes.string.isRequired,
             liked: PropTypes.bool.isRequired,
+            timeStamp: PropTypes.string.isRequired,
         })
     )
 };
