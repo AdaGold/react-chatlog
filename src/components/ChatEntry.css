@@ -1,0 +1,100 @@
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 10px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.chat-entry {
+  margin: 1rem;
+}
+
+.chat-entry:last-child {
+  margin-bottom: 0;
+}
+
+.chat-entry .entry-bubble {
+  background-color: #ffffe0;
+  border-radius: 30px;
+  max-width: 50rem;
+  min-width: 10rem;
+  padding: 1rem 1rem 0.1rem 1rem;
+  position: relative;
+  width: fit-content;
+}
+
+.chat-entry .entry-bubble:hover {
+  background-color: #fefea2;
+}
+
+.chat-entry .entry-name {
+  font-size: medium;
+  margin-bottom: 0.5rem;
+}
+
+.chat-entry .entry-time {
+  color: #bbb;
+  font-size: x-small;
+  margin-bottom: 0.1rem;
+  margin-right: 0.5rem;
+}
+
+/* Chat bubble arrow styling */
+.chat-entry .entry-bubble::before {
+  content: '';
+  height: 22px;
+  width: 44px;
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+
+  position: absolute;
+  top: 0;
+}
+
+/* "local" messages are shown on the left side */
+.chat-entry.local {
+  text-align: left;
+}
+
+.chat-entry.local .entry-time {
+  text-align: right;
+}
+
+.chat-entry.local .entry-bubble::before {
+  background-color: #ffffe0;
+  left: -18px;
+}
+
+.chat-entry.local .entry-bubble:hover::before {
+  background-color: #fefea2;
+}
+
+/* "remote" messages are shown on the right side, in blue */
+.chat-entry.remote {
+  text-align: right;
+}
+
+.chat-entry.remote .entry-bubble {
+  background-color: #e0ffff;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.chat-entry.remote .entry-bubble:hover {
+  background-color: #a9f6f6;
+}
+
+.chat-entry.remote .entry-time {
+  text-align: left;
+}
+
+.chat-entry.remote .entry-bubble::before {
+  background-color: #e0ffff;
+  right: -18px;
+}
+
+.chat-entry.remote .entry-bubble:hover::before {
+  background-color: #a9f6f6;
+}
