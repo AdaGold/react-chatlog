@@ -30,5 +30,5 @@ If this component receives `time` through `props` correctly, it will render the 
 
 ## Setup
 
-After forking and cloning this repo you must run `yarn install` in the project directory. This will download and install all of the necessary node modules required by the project. After that finishes successfully, run `yarn start` to begin the local development server.
+After forking and cloning this repo you must run `npm install` or `npm i` in the project directory. This will download and install all of the necessary node modules required by the project. After that finishes successfully, run `npm run dev` to begin the local development server.
 
