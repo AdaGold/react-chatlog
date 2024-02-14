@@ -5,8 +5,8 @@
 In this wave we will update the components to manage a **like** feature. 
 
 - Add behavior to heart button in `ChatEntry` so that when it is clicked it toggles from an empty heart (🤍) to a filled heart (❤️) and from a filled heart (❤️) to an empty heart (🤍).
-- Manage the click event and state of the chat entries such that when the like status of a chat message changes by clicking the heart button, it is tracked by the `App` and the `App` reports the number of total messages that have been liked.
-    - Example: If the user has liked three messages, `3 ❤️s` will appear at the top of the screen.
+- Manage the click event and state of the chat entries such that when the like status of a chat message changes by clicking the heart button, it is tracked by the `App` and the `App` reports the number of total messages that are currently liked.
+    - Example: If the user has liked three messages, `3 ❤️s` will appear at the top of the screen. If one of the three liked messages is unliked then `2 ❤️s` will appear at the top of the screen.
 
 <details>
     <summary>Expand to see hints for implementing this feature</summary>
