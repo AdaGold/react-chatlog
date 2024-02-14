@@ -1,7 +1,5 @@
-import React from 'react';
 import App from './App';
 import { render, screen, fireEvent } from '@testing-library/react';
-
 
 describe('Wave 03: clicking like button and rendering App', () => {
   test('that the correct number of likes is printed at the top', () => {
