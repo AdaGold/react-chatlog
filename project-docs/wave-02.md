@@ -6,7 +6,9 @@ Implement a `ChatLog` component and update the `App` component to display an ent
 
 `ChatLog` takes one prop named `entries` (which is an array).
 
-At this point, we can use the entire chat message data from the JSON file `messages.json` to test our code as you implement each component. We may choose to update the `ChatEntry` to use the `id` field in this wave.
+At this point, we can use the entire chat message data from the JSON file `messages.json` to test our code as you implement each component. We may choose to update the `ChatEntry` to use the `id` field in this wave. At the end of this wave, all messages will be on the left side of the screen. For alternating left and right messages, please follow the instructions found in [optional enhancements](optional-enhancements.md).
+
+![Wave 02 One Sided Messages](../images/react-chatlog-demo-one-sided-messages.png)
 
 ## Styling
 
