@@ -1,4 +1,4 @@
-FROM node:16.10.0-alpine3.14
+FROM node:20.11.0-alpine3.18
 
 LABEL maintainer="chris.adadev.org"
 
@@ -15,5 +15,5 @@ ADD $SUBMISSION_SUBFOLDER /app
 # for Testing
 # ADD . .
 
-RUN yarn install
+RUN npm install
 RUN chmod +x test.sh
