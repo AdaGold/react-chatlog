@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom/extend-expect';
 import ChatLog from './ChatLog';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 const LOG = [
   {

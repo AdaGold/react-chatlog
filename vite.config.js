@@ -8,6 +8,7 @@ export default defineConfig({
     // jest config here
     reporters: ['verbose'],
     environment: 'jsdom',
-    globals: true
+    globals: true,
+    setupFiles: ['./vitest.setup.js'],
   },
 })
