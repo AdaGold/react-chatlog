@@ -34,5 +34,5 @@ After forking and cloning this repo you must run `npm install` or `npm i` in the
 
 ### Testing with Vite
 
-To run tests for an application that uses Vite, you will need to install the VSCode extension called **"Vitest" by Zixuan Chen** from the [Extenstions Marketplace](https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer). After downloading you will need to restart VSCode.
+To run tests for an application that uses Vite, you will need to have installed the [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) extension by Vitest from the extensions marketplace. Be sure to restart VSCode after downloading the extension.
 
