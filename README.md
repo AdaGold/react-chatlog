@@ -24,7 +24,7 @@ This project comes with a minimal scaffold based on the baseline React applicati
 
 ## Testing
 
-The tests for this project are a mix of unit tests (Waves 01 and 02) and integration tests (Wave 03). The directions for each wave include a section about the tests for that wave. The unit tests provided for Wave 01 and Wave 02 require us to be prescriptive around component and prop names. The integration tests for Wave 03 allow for more freedom in the implementation details of this wave's feature. In order to run tests for this project, you will need to install the [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) by Vitest from the extensions marketplace.
+The tests for this project are a mix of unit tests (Waves 01 and 02) and integration tests (Wave 03). The directions for each wave include a section about the tests for that wave. The unit tests provided for Wave 01 and Wave 02 require us to be prescriptive around component and prop names. The integration tests for Wave 03 allow for more freedom in the implementation details of this wave's feature. To run the project tests in VS Code, you will need to have installed the [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) extension by Vitest from the extensions marketplace.
 
 Writing front-end tests is outside the scope of the core curriculum. We provide minimal tests for this project for a few reasons. We can use these tests to partially verify the correctness of our code. Tests support the refactoring process and enforce consistency in implementation details. Additionally, by reviewing these front-end tests, we have some exposure to what unit tests and integration tests look like in front-end testing.
 
