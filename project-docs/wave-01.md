@@ -6,7 +6,9 @@ Update the `ChatEntry` and `App` components to display a single chat message bub
 
 A good way to test this code as you write it would be to take the first chat message from the JSON data file and use it as the data for the `ChatEntry` component.
 
-`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`. Note: We do not need to include the `id` and `liked` fields for Wave 01. Additionally, you do not need to consturct your own `timeStamp`. Please refer to the [setup docs](./setup.md#hint-the-timestamp-component) about how to implement the `timeStamp` already provided.
+`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`.
+
+Note: We do not need to include the `id` and `liked` fields for Wave 01. Additionally, you should not build your own logic to handle converting the absolute value of `timeStamp` to a relative value for display. Please refer to the [setup docs](./setup.md#hint-the-timestamp-component) for tips about how to utilize the `TimeStamp` component already provided.
 
 ## Styling
 
