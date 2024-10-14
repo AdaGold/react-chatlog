@@ -10,6 +10,10 @@ At this point, we can use the entire chat message data from the JSON file `messa
 
 ![Wave 02 One Sided Messages](../images/react-chatlog-demo-one-sided-messages.png)
 
+## Imports
+
+ Remember to keep track of your imports as you work through the project. More specifically, Wave 02 will use chat messages found in the JSON file [`messages.json`](src/data/messages.json).(Note: The name used in the import will be the variable name that will use to reference the data in our code.)
+
 ## Styling
 
 Note the rule set in `ChatLog.css` and consider how to apply it to the `ChatLog` component. Remember, applying the provided styles is not one of the main learning goals for this project.

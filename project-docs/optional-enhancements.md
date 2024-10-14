@@ -1,5 +1,9 @@
 # Optional Enhancements
 
+## Imports
+
+These enhancements may require imports depending on your choice of implementation. Remember to keep track of your imports as you work through the project's enhancements.
+
 ## Local and Remote messages
 At this point you should have a chat log which shows chat messages from two different people, however all of the chat messages are displayed to one side of the screen. In keeping with the design standards for messenger apps however, one person's messages should be displayed to the other side of the screen.
 
