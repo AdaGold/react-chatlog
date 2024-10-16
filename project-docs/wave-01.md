@@ -4,7 +4,7 @@
 
 Update the `ChatEntry` and `App` components to display a single chat message bubble with the message text and relative timestamp, plus the sender's name above it.  
 
-A good way to test this code as you write it would be to take the first chat message from the [JSON data file](src/data/messages.json) and use it as the data for the `ChatEntry` component.
+A good way to test this code as you write it would be to take the first chat message from the [JSON data file](../src/data/messages.json) and use it as the data for the `ChatEntry` component.
 
 `ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`.
 
