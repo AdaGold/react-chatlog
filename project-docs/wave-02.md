@@ -12,7 +12,7 @@ At this point, we can use the entire chat message data from the JSON file `messa
 
 ## Imports
 
- Remember to keep track of your imports as you work through the project. More specifically, Wave 02 will use chat messages found in the JSON file [`messages.json`](src/data/messages.json).(Note: The name used in the import will be the variable name that will use to reference the data in our code.)
+Remember to keep track of your imports as you work through the project. More specifically, Wave 02 will use chat messages found in the JSON file [`messages.json`](../src/data/messages.json).(Note: The name used in the import will be the variable name that will use to reference the data in our code.)
 
 ## Styling
 
