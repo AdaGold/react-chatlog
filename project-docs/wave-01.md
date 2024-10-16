@@ -4,9 +4,15 @@
 
 Update the `ChatEntry` and `App` components to display a single chat message bubble with the message text and relative timestamp, plus the sender's name above it.  
 
-A good way to test this code as you write it would be to take the first chat message from the JSON data file and use it as the data for the `ChatEntry` component.
+A good way to test this code as you write it would be to take the first chat message from the [JSON data file](../src/data/messages.json) and use it as the data for the `ChatEntry` component.
 
-`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`. Note: We do not need to include the `id` and `liked` fields for Wave 01. Additionally, don't forget about the [hint](./setup.md#hint-the-timestamp-component) from the setup docs!
+`ChatEntry` should have props which match the elements from each chat message in the JSON data file: `sender`, `body`,  and `timeStamp`.
+
+Note: We do not need to include the `id` and `liked` fields for Wave 01. Additionally, you should not build your own logic to handle converting the absolute value of `timeStamp` to a relative value for display. Please refer to the [setup docs](./setup.md#hint-the-timestamp-component) for tips about how to utilize the `TimeStamp` component already provided.
+
+## Imports
+
+Remember that the values we need for building the proptypes definitions come from an external library which must be imported. We'll also need to be sure to import any other components used in each file. In general, we need to make sure that we keep track of our imports as we work through the project. 
 
 ## Styling
 

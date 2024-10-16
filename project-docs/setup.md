@@ -30,5 +30,9 @@ If this component receives `time` through `props` correctly, it will render the 
 
 ## Setup
 
-After forking and cloning this repo you must run `yarn install` in the project directory. This will download and install all of the necessary node modules required by the project. After that finishes successfully, run `yarn start` to begin the local development server.
+After forking and cloning this repo you must run `npm install` or `npm i` in the project directory. This will download and install all of the necessary node modules required by the project. After that finishes successfully, run `npm run dev` to begin the local development server.
+
+### Testing with Vite
+
+To run tests for an application that uses Vite, you will need to have installed the [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer) extension by Vitest from the extensions marketplace. Be sure to restart VSCode after downloading the extension.
 

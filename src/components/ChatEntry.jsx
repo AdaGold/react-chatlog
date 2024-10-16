@@ -1,8 +1,6 @@
-import React from 'react';
 import './ChatEntry.css';
-import PropTypes from 'prop-types';
 
-const ChatEntry = (props) => {
+const ChatEntry = () => {
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">Replace with name of sender</h2>
@@ -16,7 +14,7 @@ const ChatEntry = (props) => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  // Fill with correct proptypes
 };
 
 export default ChatEntry;
