@@ -31,6 +31,7 @@ export default [{
     plugins: {
         "react-refresh": reactRefresh,
     },
+
     languageOptions: {
         globals: {
             ...globals.browser,
@@ -43,7 +44,7 @@ export default [{
 
     settings: {
         react: {
-            version: "18.3.1",
+            version: "18.2",
         },
     },
 
@@ -52,14 +53,24 @@ export default [{
             allowConstantExport: true,
         }],
 
-        semi: ["warn", "always"],
-        "comma-dangle": ["warn", "only-multiline"],
 
+        "max-len": [1, 120, 2, { "ignoreComments": true }],
+        "no-console": "off",
         quotes: ["error", "single", {
             allowTemplateLiterals: true,
             avoidEscape: true,
         }],
-
-        camelcase: "error",
-    },
+        "camelcase": ["error", {"properties": "always"}],
+        "semi": ["warn", "always"],
+        "comma-dangle": ["warn", "only-multiline"],
+        "dot-notation": "warn",
+        "space-before-function-paren": "off",
+        "indent": ["warn", 2],
+        "padded-blocks": "warn",
+        "no-trailing-spaces": "warn",
+        "array-bracket-spacing": "warn",
+        "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+        "padded-blocks": ["error", "never"],
+        "no-var": "error",
+      },
 }];
