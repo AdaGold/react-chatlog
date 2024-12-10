@@ -1,22 +1,22 @@
 import './App.css';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog';
 import messages from './data/messages.json';
 
 const App = () => {
+  const participantList = [];
+  messages.forEach((message) => {
+    if (!participantList.includes(message.sender)) {
+      participantList.push(message.sender);
+    }
+  });
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat between {participantList[0]} and {participantList[1]}</h1>
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
-        <ChatEntry
-          key={messages[0].id}
-          sender={messages[0].sender}
-          body={messages[0].body}
-          timeStamp={messages[0].timeStamp}
-        />
+        <ChatLog entries={messages} />
       </main>
     </div>
   );
