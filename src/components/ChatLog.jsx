@@ -33,8 +33,8 @@ ChatLog.propTypes = {
       liked: PropTypes.bool.isRequired,
     })).isRequired,
   onMessageLiked: PropTypes.func.isRequired,
-  localColor: PropTypes.string.isRequired,
-  remoteColor: PropTypes.string.isRequired,
+  localColor: PropTypes.string,
+  remoteColor: PropTypes.string,
 };
 
 export default ChatLog;
