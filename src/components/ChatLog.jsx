@@ -13,6 +13,8 @@ function ChatLog(props) {
           timeStamp={message.timeStamp}
           liked={message.liked}
           onMessageLiked={props.onMessageLiked}
+          localColor={props.localColor}
+          remoteColor={props.remoteColor}
         />
       </div>
     );
@@ -31,6 +33,8 @@ ChatLog.propTypes = {
       liked: PropTypes.bool.isRequired,
     })).isRequired,
   onMessageLiked: PropTypes.func.isRequired,
+  localColor: PropTypes.string.isRequired,
+  remoteColor: PropTypes.string.isRequired,
 };
 
 export default ChatLog;

@@ -3,16 +3,20 @@ import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  const senderLocation = props.sender === 'Estragon'
+  const isRemote = props.sender === 'Estragon' ? true : false;
+  const senderLocation = isRemote
     ? 'chat-entry remote'
     : 'chat-entry  local';
+  const senderColor = isRemote
+    ? props.remoteColor
+    : props.localColor;
 
   return (
     <div className={senderLocation}>
       <section>
         <h2 className="entry-name">{props.sender}</h2>
         <section className="entry-bubble">
-          <p>{props.body}</p>
+          <p className={senderColor}>{props.body}</p>
           <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
           <button
             className="like"
@@ -33,6 +37,8 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.string.isRequired,
   onMessageLiked: PropTypes.func.isRequired,
+  localColor: PropTypes.string.isRequired,
+  remoteColor: PropTypes.string.isRequired,
 };
 
 export default ChatEntry;
