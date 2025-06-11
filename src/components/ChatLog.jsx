@@ -19,7 +19,6 @@ const renderChatEntry = (entry, onLikeToggle, localSender) => {
 
 const ChatLog = ({ entries, onLikeToggle }) => {
   const localSender = entries[0]?.sender || '';
-
   return (
     <div className="chat-log">
       {entries.map(entry => renderChatEntry(entry, onLikeToggle, localSender))}
