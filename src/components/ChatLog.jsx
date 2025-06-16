@@ -2,26 +2,25 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 import './ChatLog.css';
 
-const renderChatEntry = (entry, onLikeToggle, localSender) => {
-  return (
-    <ChatEntry
-      key={entry.id}
-      sender={entry.sender}
-      body={entry.body}
-      timeStamp={entry.timeStamp}
-      liked={entry.liked}
-      isLocal={entry.sender === localSender}
-      onLikeClick={() => onLikeToggle(entry.id)}
-    />
-  );
-};
-
-
-const ChatLog = ({ entries, onLikeToggle }) => {
+const ChatLog = ({entries, onLikeToggle }) => {
   const localSender = entries[0]?.sender || '';
+  const entryComponents = entries.map(entry => {
+    return (
+      <ChatEntry
+        key={entry.id}
+        sender={entry.sender}
+        body={entry.body}
+        timeStamp={entry.timeStamp}
+        liked={entry.liked}
+        isLocal={entry.sender === localSender}
+        onLikeClick={() => onLikeToggle(entry.id)}
+      />
+    );
+  });
+
   return (
     <div className="chat-log">
-      {entries.map(entry => renderChatEntry(entry, onLikeToggle, localSender))}
+      {entryComponents}
     </div>
   );
 };

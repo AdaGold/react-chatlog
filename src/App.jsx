@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import './App.css';
-import ChatEntry from './components/ChatEntry.jsx';
 import ChatLog from './components/ChatLog.jsx';
 import chatMessages from './data/messages.json';
 
 const App = () => {
-
   const [entries, setEntries] = useState(chatMessages);
-
   const toggleLike = (id) => {
     const updatedEntries = entries.map((entry) => {
       if (entry.id === id) {
@@ -31,8 +28,6 @@ const App = () => {
       </header>
       <main>
         <ChatLog entries={entries} onLikeToggle={toggleLike} />
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
       </main>
     </div>
   );

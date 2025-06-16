@@ -9,7 +9,9 @@ const ChatEntry = ({ sender, body, timeStamp, liked, onLikeClick, isLocal }) => 
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
-        <p className="entry-time">{timeStamp}</p>
+        <p className="entry-time">
+          <TimeStamp time={timeStamp} />
+        </p>
         <button className="like" onClick={onLikeClick}>
           {liked ? '❤️' : '🤍'}
         </button>
