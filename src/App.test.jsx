@@ -13,8 +13,28 @@ describe('Wave 03: clicking like button and rendering App', () => {
     fireEvent.click(buttons[10]);
 
     // Assert
-    const countScreen = screen.getByText(/3 ❤️s/);
-    expect(countScreen).not.toBeNull();
+    const likeCountText = screen.getByText(/3 ❤️s/);
+    expect(likeCountText).not.toBeNull();
+  });
+
+  test('liking then unliking messages correctly decreases the count of likes', () => {
+    // Arrange
+    const { container } = render(<App />);
+    let buttons = container.querySelectorAll('button.like');
+
+    // Act
+    // Activate 3 likes
+    fireEvent.click(buttons[0]);
+    fireEvent.click(buttons[1]);
+    fireEvent.click(buttons[10]);
+
+    // Deactivate 2 likes
+    fireEvent.click(buttons[0]);
+    fireEvent.click(buttons[1]);
+
+    // Assert
+    const likeCountText = screen.getByText(/1 ❤️s/);
+    expect(likeCountText).not.toBeNull();
   });
 
   test('clicking button toggles heart and does not affect other buttons', () => {
