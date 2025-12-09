@@ -1,7 +1,7 @@
 
 import js from '@eslint/js'
 import globals from 'globals'
-import vitest from 'eslint-plugin-vitest'
+import vitest from '@vitest/eslint-plugin'
 import stylistic from '@stylistic/eslint-plugin'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
