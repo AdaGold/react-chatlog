@@ -2,7 +2,7 @@ import ChatEntry from './ChatEntry';
 import './ChatLog.css';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({ entries, isLiked }) => {
+const ChatLog = ({ entries, localSender, isLiked }) => {
   const chatEntryComponents = entries.map((entry) => {
     return (
       <ChatEntry
@@ -13,12 +13,13 @@ const ChatLog = ({ entries, isLiked }) => {
         timeStamp={entry.timeStamp}
         liked={entry.liked}
         isLiked={isLiked}
+        localSender={localSender}
       />
     );
   });
   return (
     <section className='chat'>
-      <ul>{chatEntryComponents}</ul>
+      <ul className='chat-entries'>{chatEntryComponents}</ul>
     </section>
   );
 };
@@ -31,6 +32,7 @@ ChatLog.propTypes = {
       body: PropTypes.string.isRequired,
       timeStamp: PropTypes.string.isRequired,
       liked: PropTypes.bool.isRequired,
+      localSender:PropTypes.bool.isRequired,
     })
   ).isRequired,
   isLiked: PropTypes.func.isRequired
