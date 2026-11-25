@@ -2,7 +2,7 @@ import ChatEntry from './ChatEntry';
 import './ChatLog.css';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({ entries, localSender, isLiked }) => {
+const ChatLog = ({ entries, isLiked, localSender }) => {
   const chatEntryComponents = entries.map((entry) => {
     return (
       <ChatEntry
@@ -34,7 +34,8 @@ ChatLog.propTypes = {
       liked: PropTypes.bool.isRequired,
     })
   ).isRequired,
-  isLiked: PropTypes.func.isRequired
+  isLiked: PropTypes.func.isRequired,
+  localSender: PropTypes.string.isRequired,
 };
 
 export default ChatLog;
