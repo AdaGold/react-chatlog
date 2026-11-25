@@ -2,7 +2,8 @@ import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
-const ChatEntry = ({ id, sender, body, timeStamp, liked }) => {
+const ChatEntry = ({ id, sender, body, timeStamp, liked, isLiked }) => {
+  const like = liked? '❤️' : '🤍';
   return (
     <div className="chat-entry local">
       <h2 className="entry-name"> {sender}</h2>
@@ -11,7 +12,10 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked }) => {
         <p className="entry-time">
           <TimeStamp time={timeStamp} />
         </p>
-        <button className="like" >🤍</button>
+        <button
+          className="like"
+          onClick={() => isLiked(id)}
+        >{like}</button>
       </section>
     </div>
   );
