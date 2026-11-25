@@ -55,7 +55,7 @@ button {
 
 /* "local" messages are shown on the left side */
 .chat-entry.local {
-  align-self: flex-end;
+  text-align: left;
 }
 
 .chat-entry.local .entry-time {
@@ -73,7 +73,7 @@ button {
 
 /* "remote" messages are shown on the right side, in blue */
 .chat-entry.remote {
-  align-self: flex-start;
+  text-align: right;
 }
 
 .chat-entry.remote .entry-bubble {
@@ -97,12 +97,4 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
-}
-
-.chat-entry.local .entry-name {
-  text-align: left;
-}
-
-.chat-entry.remote .entry-name {
-  text-align: right;
 }

@@ -2,11 +2,3 @@
   margin: auto;
   max-width: 50rem;
 }
-
-.local {
-  align-self: flex-end;
-}
-
-.remote {
-  align-self: flex-start;
-}

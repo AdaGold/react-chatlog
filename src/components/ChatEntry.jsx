@@ -6,7 +6,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, isLiked, localSender })
   const like = liked ? '❤️' : '🤍';
   const senderClass = sender === localSender ? 'local' : 'remote';
   return (
-    <div className={`chat-entry ${senderClass}`}>
+    <li className={`chat-entry ${senderClass}`}>
       <h2 className='entry-name'> {sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
@@ -18,7 +18,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, isLiked, localSender })
           onClick={() => isLiked(id)}
         >{like}</button>
       </section>
-    </div>
+    </li>
   );
 };
 
@@ -28,7 +28,6 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  localSender: PropTypes.bool.isRequired,
 };
 
 export default ChatEntry;

@@ -77,3 +77,7 @@
 .purple {
   color: purple
 }
+
+#App li {
+  list-style: none
+}
