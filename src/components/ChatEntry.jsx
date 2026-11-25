@@ -7,7 +7,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, isLiked, localSender })
   const senderClass = sender === localSender ? 'local' : 'remote';
   return (
     <div className={`chat-entry ${senderClass}`}>
-      <h2 className={`entry-name`}> {sender}</h2>
+      <h2 className='entry-name'> {sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time">
